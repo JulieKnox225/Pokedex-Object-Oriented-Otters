@@ -67,3 +67,31 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+input {
+  display: flex;
+  align-items: center;
+}
+
+textarea {
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  padding: 15px;
+  background-color: black;
+  font-size: larger;
+  display: flex;
+  text-align: center;
+  color:red
+  
+}
+
+.home-button {
+  margin-right:auto;
+  margin-left:auto;
+  color: red;
+  text-decoration: none;
+  
+}
