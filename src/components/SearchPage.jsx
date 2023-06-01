@@ -6,13 +6,7 @@ export const SearchPage = () => {
   const [search, setSearch] = React.useState("")
 
   const handleChange = (e) => {
-    const {name, value} = e.target
-    setSearch(prevSearch => {
-      return {
-        ...prevSearch, 
-        [name]: value
-      }
-    }) 
+    setSearch(e.target.value) 
   }
   
   console.log(search)
