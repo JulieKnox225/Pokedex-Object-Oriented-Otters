@@ -21,7 +21,7 @@ export const SearchPage = () => {
             placeholder="Who's that Pokemon?"
             onChange={handleChange}
             name="search"
-            value={search.search}
+            value={search}
             style={{ flex: 1, height: '30px' }}
           />
           <button type="submit" style={{ height: '30px' }}>
