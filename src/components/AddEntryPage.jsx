@@ -144,7 +144,7 @@ export const AddEntryPage = () => {
             </div>
           </div>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <button type="submit">Add New Alumni/Pokemon</button>
+            <button type="submit">Add New Alumni</button>
           </div>
         </form>
       </div>
