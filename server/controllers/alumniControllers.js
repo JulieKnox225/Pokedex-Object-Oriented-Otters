@@ -1,7 +1,7 @@
-const getAllPokemon = async (req, res) => {
+const getAllAlumni = async (req, res) => {
     try {
         const result = await req.db.query(
-            `SELECT * FROM pokedex`
+            `SELECT * FROM alumni`
         );
         res.status(200).json({success: true, message: `Data retrieved`, data: result[0]});
     } catch (error) {
@@ -9,11 +9,11 @@ const getAllPokemon = async (req, res) => {
     }
 };
 
-const getPokemonById = async (req, res) => {
+const getAlumniById = async (req, res) => {
     try {
         const { id } = req.params;
         const result = await req.db.query(
-            `SELECT * FROM pokedex
+            `SELECT * FROM alumni
                 WHERE id = :id`,
             {
                 id
@@ -26,11 +26,11 @@ const getPokemonById = async (req, res) => {
     }
 };
 
-const getPokemonByName = async (req, res) => {
+const getAlumniByName = async (req, res) => {
     try {
         const { name } = req.params;
         const result = await req.db.query(
-            `SELECT * FROM pokedex
+            `SELECT * FROM alumni
                 WHERE name = :name`,
             {
                 name
@@ -43,14 +43,14 @@ const getPokemonByName = async (req, res) => {
     }
 };
 
-const getPokemonByType = async (req, res) => {
+const getAlumniByYear = async (req, res) => {
     try {
-        const { type } = req.params;
+        const { year } = req.params;
         const result = await req.db.query(
-            `SELECT * FROM pokedex
-                WHERE type = :type`,
+            `SELECT * FROM alumni
+                WHERE year = :year`,
             {
-                type
+                year
             }
         );
 
@@ -60,23 +60,15 @@ const getPokemonByType = async (req, res) => {
     }
 };
 
-const createPokemon = async (req, res) => {
+const createAlumni = async (req, res) => {
     try {
-        const { name, types, total, hp, attack, defense, spAtk, spDef, speed } = req.body;
+        const { fullName, contactInfo, degree, achievements, projects, skills, recommendations } = req.body;
         
         await req.db.query(
-            `INSERT INTO pokedex (Name, Types, Total, Hp, Attack, Defense, spAtk, spDef, Speed)
-                VALUES (:name, :types, :total, :hp, :attack, :defense, :spAtk, :spDef, :speed)`,
+            `INSERT INTO pokedex (fullName, contactInfo, degree, achievements, projects, skills, recommendations)
+                VALUES (:fullName, :contactInfo, :degree, :achievements, :projects, :skills, :recommendations)`,
             {
-                name, 
-                types, 
-                total, 
-                hp, 
-                attack, 
-                defense, 
-                spAtk, 
-                spDef, 
-                speed
+                fullName, contactInfo, degree, achievements, projects, skills, recommendations
             }
         );
 
@@ -86,14 +78,14 @@ const createPokemon = async (req, res) => {
     }
 };
 
-const updatePokemon = async (req, res) => {
+const updateAlumni = async (req, res) => {
     try {
         const { id } = req.params;
         const bodyValuesArray = Object.entries(req.body);
 
         for(let i = 0; i < bodyValuesArray.length; i++) {
             await req.db.query(
-                `UPDATE pokedex SET property = :value
+                `UPDATE almuni SET property = :value
                     WHERE id = :id`,
                 {
                     property: bodyValuesArray[i][0],
@@ -109,10 +101,10 @@ const updatePokemon = async (req, res) => {
 };
 
 module.exports = {
-    getAllPokemon,
-    getPokemonById,
-    getPokemonByName,
-    getPokemonByType,
-    createPokemon,
-    updatePokemon
+    getAllAlumni,
+    getAlumniById,
+    getAlumniByName,
+    getAlumniByYear,
+    createAlumni,
+    updateAlumni
 }

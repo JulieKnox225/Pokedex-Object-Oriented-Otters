@@ -1,11 +1,9 @@
-import avatar from "../images/default-profile-pic.jpg"
-
-
+import avatar from "/images/default-profile-pic.jpg"
 
 export const IDCards = () => {
   return (
     <div>
-        <img className="avatar" src={avatar} />
+        <img className="avatar-for-search" src={avatar} />
         <h5>1</h5>
     </div>
   )

@@ -2,11 +2,12 @@
   text-align: center;
 }
 
-.avatar {
+.avatar-for-search {
   height: 6em;
 }
+
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #ff00008f);
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);

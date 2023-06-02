@@ -62,7 +62,6 @@ export const SearchPage = () => {
         </div>
       )}
       
-
       <IDCards />
 
     </>
