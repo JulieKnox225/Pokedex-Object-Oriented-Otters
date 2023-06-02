@@ -27,15 +27,6 @@ form {
   border-radius: 0px 0px 10px 10px;
 }
 
-nav {
-  
-  background-color: black;
-  
-  display: flex;
-  text-align: center;
-  
-}
-
 .pokemon--logo{
   width: 200px;
   height: 100px;
