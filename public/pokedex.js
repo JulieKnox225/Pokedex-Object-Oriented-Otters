@@ -1,4 +1,7 @@
-const sqlite3 = require('sqlite3').verbose();
+// Update note: Still need to work on generating 100 pokemon without 1:1 duplicates. 
+// Suggestions are welcome!
+import mysql from 'mysql';
+import fs from 'fs';
 
 class Pokemon {
   constructor(pokedexId, name, types, total, hp, attack, defense, spAtk, spDef, speed) {
@@ -55,20 +58,98 @@ function generateRandomTypes() {
   return shuffledTypes.slice(0, numTypes);
 }
 
-// Create SQLite database and tables
-const db = new sqlite3.Database('pokemon.db');
+// Create MySQL connection
+const connection = mysql.createConnection({
+  host: "127.0.0.1",
+  port: 3306,
+  user: "root",
+  password: "bvtpassword", 
+  database: "pokedexDB", 
+});
 
-// Create table for each generation
-const createTableQuery = `
-  CREATE TABLE IF NOT EXISTS generation1 (
-    pokedexId INTEGER PRIMARY KEY,
-    name TEXT,
-    types TEXT,
-    total INTEGER,
-    hp INTEGER,
-    attack INTEGER,
-    defense INTEGER,
-    spAtk INTEGER,
-    spDef INTEGER,
-    speed INTEGER
-  )`;
+// Connect to MySQL
+connection.connect(err => {
+  if (err) {
+    console.error('Error connecting to MySQL:', err);
+    return;
+  }
+  console.log('Connected to MySQL.');
+
+  // Create table for each generation
+  const createTableQuery = `
+    CREATE TABLE IF NOT EXISTS generation1 (
+      pokedexId INT PRIMARY KEY,
+      name VARCHAR(255),
+      types VARCHAR(255),
+      total INT,
+      hp INT,
+      attack INT,
+      defense INT,
+      spAtk INT,
+      spDef INT,
+      speed INT
+    )`;
+
+  // Execute create table query
+  connection.query(createTableQuery, err => {
+    if (err) {
+      console.error('Error creating table:', err);
+      connection.end();
+      return;
+    }
+
+    console.log('Table created successfully.');
+
+    // Generate 100 Pokemon
+    const usedNames = [];
+    const pokemonList = [];
+
+    for (let i = 1; i <= 100; i++) {
+      const pokemon = generateRandomPokemon(i.toString().padStart(3, '0'), usedNames);
+      usedNames.push(pokemon.name);
+      pokemonList.push(pokemon);
+      console.log(pokemon.toString());
+
+      // Save the Pokemon to the database
+      const insertQuery = `
+        INSERT INTO generation1 (pokedexId, name, types, total, hp, attack, defense, spAtk, spDef, speed)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+
+      connection.query(
+        insertQuery,
+        [
+          pokemon.pokedexId,
+          pokemon.name,
+          pokemon.types.join(', '),
+          pokemon.total,
+          pokemon.hp,
+          pokemon.attack,
+          pokemon.defense,
+          pokemon.spAtk,
+          pokemon.spDef,
+          pokemon.speed
+        ],
+        err => {
+          if (err) {
+            console.error('Error inserting Pokemon:', err);
+          }
+        }
+      );
+    }
+
+    // Close the MySQL connection
+    connection.end();
+
+    // Save the Pokemon output to a file
+    const outputFile = 'pokemon_output.txt';
+    const outputText = pokemonList.map(pokemon => pokemon.toString()).join('\n\n');
+
+    fs.writeFile(outputFile, outputText, err => {
+      if (err) {
+        console.error('Error saving output file:', err);
+      } else {
+        console.log(`Pokemon output saved to "${outputFile}".`);
+      }
+    });
+  });
+});
