@@ -28,6 +28,7 @@ export const AddEntryPage = () => {
       const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Form Data:', formData);
+        // submit to Database 
         setFormData({
           firstName: '',
           lastName: '',
@@ -50,10 +51,10 @@ export const AddEntryPage = () => {
             <div style={{ marginRight: '10px' }}>
               <label htmlFor="firstName">First Name:</label>
               <input
-                 type="text"
+                id='firstName'
+                type="text"
                 placeholder="John"
                 onChange={handleChange}
-                name="firstName"
                 value={formData.firstName}
                 required
               />
@@ -64,7 +65,7 @@ export const AddEntryPage = () => {
                 type="text"
                 placeholder="Doe"
                 onChange={handleChange}
-                name="lastName"
+                id="lastName"
                 value={formData.lastName}
                 required
               />
@@ -77,7 +78,7 @@ export const AddEntryPage = () => {
                 type="text"
                 placeholder="(555)-555-5555"
                 onChange={handleChange}
-                name="phoneNumber"
+                id="phoneNumber"
                 value={formData.phoneNumber}
               />
             </div>
@@ -87,7 +88,7 @@ export const AddEntryPage = () => {
                 type="email"
                 placeholder="JohnDoe@email.com"
                 onChange={handleChange}
-                name="email"
+                id="email"
                 value={formData.email}
               />
             </div>
@@ -97,7 +98,7 @@ export const AddEntryPage = () => {
               <label htmlFor="degree">Degree:</label>
               <input
                 type='text'
-                name="degree"
+                id="degree"
                 value={formData.degree}
                 onChange={handleChange}
               />

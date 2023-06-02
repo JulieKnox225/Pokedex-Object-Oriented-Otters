@@ -1,6 +1,7 @@
 import './App.css'
 import { AddEntryPage } from './components/AddEntryPage'
 import { Navbar } from './components/Navbar'
+import { SearchPage } from './components/SearchPage'
 
 function App() {
 
@@ -8,8 +9,9 @@ function App() {
     <>
       <Navbar />
       <div>
-        <AddEntryPage />
+        <SearchPage />
       </div>
+      <AddEntryPage />
     </>
   )
 }

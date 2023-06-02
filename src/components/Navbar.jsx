@@ -3,7 +3,7 @@
 export const Navbar = () => {
   return (
     <nav>
-        <h4>=</h4>
+        <h4 className='sideMenu'>=</h4>
         <a href="/" className="home-button">
         <h2>Pokemans</h2>
         </a>
