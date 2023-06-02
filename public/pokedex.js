@@ -1,3 +1,5 @@
+// Update note: Still need to work on generating 100 pokemon without 1:1 duplicates. 
+// Suggestions are welcome!
 import mysql from 'mysql';
 import fs from 'fs';
 
