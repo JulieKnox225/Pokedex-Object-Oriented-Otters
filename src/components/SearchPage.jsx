@@ -1,24 +1,51 @@
 import { useState } from 'react';
 import { IDCards } from './IDCards';
+import fakeData from '../fakeData'
+
 
 export const SearchPage = () => {
   
   const [search, setSearch] = useState('')
   const [searchResults, setSearchResults] = useState('')
 
-  const handleChange = (e) => {
-    setSearch(e.target.value) 
-  }
+  // const idCards = fakeData.map(info => {
+  //   return (
+  //     <IDCards
+  //       key={info.id}
+  //       firstName={info.firstName}
+  //       lastName={info.lastName}
+  //       email={info.email}
+  //       degree={info.degree}
+  //       additionalInfo={info.additionalInfo}
+  //       experience={info.experience}
+  //       achievements={info.achievements}
+  //       skills={info.skills}
+  //     />
+  //   )
+  // })
   
   const handleSubmit = (e) => {
     e.preventDefault();
     if (search.trim() === '') {
       return; 
     } //Prevents empty search, ex: "    " or ""
-    console.log('Search submitted:', search);
-    setSearchResults(['Result 1', 'Result 2', 'Result 3']); 
-  };
 
+  const filteredResults = fakeData.filter((info) => {
+    const searchValue = search.toLowerCase();
+    const fullName = `${info.firstName} ${info.lastName}`
+
+    return (
+      fullName.includes(searchValue) ||
+      info.email.toLowerCase().includes(searchValue) ||
+      info.degree.toLowerCase().includes(searchValue)
+    
+    );
+  });
+
+  setSearchResults(filteredResults);  
+};
+
+  
   return (
     <>
     <div style={{ display: 'flex', justifyContent: 'center' }}>
@@ -33,7 +60,7 @@ export const SearchPage = () => {
           <input
             type="text"
             placeholder="Who's that Pokemon?"
-            onChange={handleChange}
+            onChange={(e) => setSearch(e.target.value)}
             value={search}
             style={{ flex: 1, height: '30px', border: 'none',  width: '300px' }}
           />
@@ -50,20 +77,28 @@ export const SearchPage = () => {
             height: 0.1,
         }}
           />
-
       {searchResults.length > 0 && (
         <div style={{ marginTop: '20px' }}>
           <p>These are the results for {search}:</p>
-          <ul>
-            {searchResults.map((result, index) => {
-              <li key={index}>{result}</li>
-            })}
-          </ul>
+          <div className='search-results'>
+          {searchResults.map((info) => (
+            <IDCards
+            key={info.id}
+            firstName={info.firstName}
+            lastName={info.lastName}
+            email={info.email}
+            degree={info.degree}
+            additionalInfo={info.additionalInfo}
+            experience={info.experience}
+            achievements={info.achievements}
+            skills={info.skills}
+            />
+          ))}
+          </div>
         </div>
       )}
-      
-      <IDCards />
-
     </>
   )
 }
+
+

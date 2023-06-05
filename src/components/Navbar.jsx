@@ -15,7 +15,7 @@ export const Navbar = () => {
           <Dropdown.Item href="/AddEntryPage">Add Entry</Dropdown.Item>
           
         </Dropdown.Menu>
-        </Dropdown>
+      </Dropdown>
         <a href="/" className="home-button">
         <h2>PokeDex</h2>
         </a>

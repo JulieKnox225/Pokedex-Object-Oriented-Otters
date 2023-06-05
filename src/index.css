@@ -13,8 +13,6 @@ form {
 
 /* Login Page CSS AV*/
 
-
-
 .nav-home{
   padding: 15px;
   display: flex;
@@ -105,5 +103,22 @@ textarea {
 .sideMenu:hover {
 
   color:#f9f9f9
+
+}
+
+.search-results {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 25px;
+  overflow-y: scroll;
+  max-height: 500px;
+
+}
+
+.id-card {
+  max-width: 250px;
+  background-color: #242424;
+  font-size: larger;
+  max-width: 100%;
 
 }
