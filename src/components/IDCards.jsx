@@ -1,7 +1,6 @@
 import avatar from "/images/default-profile-pic.jpg"
 
 export const IDCards = (props) => {
-  console.log(props)
   return (
     <div className="id-card">
         <img className="avatar-for-search" src={avatar} />
