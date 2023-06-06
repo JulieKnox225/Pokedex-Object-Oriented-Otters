@@ -2,9 +2,6 @@
   text-align: center;
 }
 
-.avatar-for-search {
-  height: 6em;
-}
 
 .logo:hover {
   filter: drop-shadow(0 0 2em #ff00008f);

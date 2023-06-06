@@ -8,33 +8,17 @@ export const SearchPage = () => {
   const [search, setSearch] = useState('')
   const [searchResults, setSearchResults] = useState('')
 
-  // const idCards = fakeData.map(info => {
-  //   return (
-  //     <IDCards
-  //       key={info.id}
-  //       firstName={info.firstName}
-  //       lastName={info.lastName}
-  //       email={info.email}
-  //       degree={info.degree}
-  //       additionalInfo={info.additionalInfo}
-  //       experience={info.experience}
-  //       achievements={info.achievements}
-  //       skills={info.skills}
-  //     />
-  //   )
-  // })
-  
   const handleSubmit = (e) => {
     e.preventDefault();
+    //Prevents empty search, ex: "    " or ""
     if (search.trim() === '') {
       return; 
-    } //Prevents empty search, ex: "    " or ""
+    } 
 
   const filteredResults = FakeData.filter((info) => {
     const searchValue = search.toLowerCase();
     const fullName = `${info.firstName} ${info.lastName}`.toLowerCase()
     
-
     return (
       fullName.includes(searchValue) ||
       info.email.toLowerCase().includes(searchValue) ||
@@ -45,7 +29,6 @@ export const SearchPage = () => {
   setSearchResults(filteredResults);  
 };
 
-  
   return (
     <>
     <div style={{ display: 'flex', justifyContent: 'center' }}>
@@ -64,7 +47,7 @@ export const SearchPage = () => {
             value={search}
             style={{ flex: 1, height: '30px', border: 'none',  width: '300px' }}
           />
-          <button type="submit" style={{ height: '32px' }}>
+          <button className='SP-button' type="submit">
             Search
           </button>
           

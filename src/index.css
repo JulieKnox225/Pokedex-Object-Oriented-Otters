@@ -1,3 +1,5 @@
+/* Start of Body, Root, Footer CSS */
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -5,13 +7,47 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
+  viewport-fit: auto;
 }
+
+body {
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%,
+   rgba(212,9,9,0.6460959383753502) 0%, rgba(0,127,255,0.738532913165266) 100%);
+
+}
+
+.footer {
+  padding: 25px;
+  text-align: center;
+  color: white;
+  background-color: #2a2e30;
+}
+
+/* End of Body & Root CSS */
+
+/* Start of Nav Bar */
+
+.home-button {
+  margin-right:auto;
+  margin-left:auto;
+  color: red;
+
+}
+
+.sideMenu:hover {
+
+  color:#f9f9f9
+
+}
+
+/* End of Nav Bar */
+
+/* Login Page CSS AV*/
 
 form {
   margin-bottom: 10px;
 }
-
-/* Login Page CSS AV*/
 
 .nav-home{
   padding: 15px;
@@ -28,6 +64,7 @@ form {
 .pokemon--logo{
   width: 200px;
   height: 100px;
+  margin: 15px;
 }
 
 .form-basic-email,
@@ -39,6 +76,14 @@ form {
   margin-right: auto;
 }
 
+.form-label {
+  color: white;
+}
+
+.text-muted {
+  color: white;
+  font-size: medium;
+}
 
 .btn-el{
   margin: 20px auto 20px;
@@ -48,15 +93,56 @@ form {
   width: 300px;
   padding: 10px;
 }
-/* End of Login CSS AV*/
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+
+.login--container {
+  padding-bottom: 50px;
 }
 
 .login-buttons {
   margin-bottom: 10px;
 }
+
+/* End of Login CSS AV*/
+
+/*  Start Search Page CSS */
+
+.avatar-for-search {
+  height: 9em;
+}
+
+.search-results {
+  display: flex;
+  justify-content: space-around;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.outer-id-card {
+  background-color: #242424;
+  font-size: larger;
+  margin: 15px; 
+}
+
+.inner-id-card {
+  margin: 15px;
+  min-width: 250px;
+
+
+}
+
+.modal-content {
+  background-color: #1a1a1a;
+
+}
+
+.modal-title {
+  color:white;
+}
+
+/*   End Search Page CSS */
+
+/* General Buttons, inputs and textareas 
+(Might have to change later according to each Page) */
 
 button {
   border-radius: 4px;
@@ -67,6 +153,7 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #8a0202;
 }
@@ -75,50 +162,14 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-input {
-  display: flex;
-  align-items: center;
-}
-
+input,
 textarea {
   display: flex;
   align-items: center;
 }
 
-.footer {
-  margin-top: 60px;
-  text-align: center;
-  background-color: 'black';
 
+p{
+  color:white;
 }
 
-
-.home-button {
-  margin-right:auto;
-  margin-left:auto;
-  color: red;
-  text-decoration: none;
-  
-}
-.sideMenu:hover {
-
-  color:#f9f9f9
-
-}
-
-.search-results {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 25px;
-  overflow-y: scroll;
-  max-height: 500px;
-
-}
-
-.id-card {
-  max-width: 250px;
-  background-color: #242424;
-  font-size: larger;
-  max-width: 100%;
-
-}

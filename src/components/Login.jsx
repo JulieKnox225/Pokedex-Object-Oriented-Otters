@@ -30,8 +30,6 @@ export const Login = () => {
     console.log(email)
   }
 
-  
-
   return (
     
     <Form onSubmit={handleSubmit} className='login--container'>
