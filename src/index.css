@@ -173,3 +173,36 @@ p{
   color:white;
 }
 
+<<<<<<< HEAD
+=======
+
+.home-button {
+  margin-right:auto;
+  margin-left:auto;
+  color: red;
+  text-decoration: none;
+  
+}
+.sideMenu:hover {
+
+  color:#f9f9f9
+
+}
+
+.search-results {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 25px;
+  overflow-y: scroll;
+  max-height: 500px;
+
+}
+
+.id-card {
+  max-width: 250px;
+  background-color: #242424;
+  font-size: larger;
+  max-width: 100%;
+
+}
+>>>>>>> d48afb920eb6f9e7d2764613eb01350f1c195070

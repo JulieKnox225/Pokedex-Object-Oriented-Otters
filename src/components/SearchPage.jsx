@@ -42,7 +42,7 @@ export const SearchPage = () => {
           }}>
           <input
             type="text"
-            placeholder="Who's that Pokemon?"
+            placeholder="Who's that Alumnus?"
             onChange={(e) => setSearch(e.target.value)}
             value={search}
             style={{ flex: 1, height: '30px', border: 'none',  width: '300px' }}
