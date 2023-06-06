@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { IDCards } from './IDCards';
-import fakeData from '../fakeData'
+import FakeData from '../FakeData'
 
 
 export const SearchPage = () => {
@@ -30,15 +30,15 @@ export const SearchPage = () => {
       return; 
     } //Prevents empty search, ex: "    " or ""
 
-  const filteredResults = fakeData.filter((info) => {
+  const filteredResults = FakeData.filter((info) => {
     const searchValue = search.toLowerCase();
-    const fullName = `${info.firstName} ${info.lastName}`
+    const fullName = `${info.firstName} ${info.lastName}`.toLowerCase()
+    
 
     return (
       fullName.includes(searchValue) ||
       info.email.toLowerCase().includes(searchValue) ||
       info.degree.toLowerCase().includes(searchValue)
-    
     );
   });
 
@@ -84,14 +84,7 @@ export const SearchPage = () => {
           {searchResults.map((info) => (
             <IDCards
             key={info.id}
-            firstName={info.firstName}
-            lastName={info.lastName}
-            email={info.email}
-            degree={info.degree}
-            additionalInfo={info.additionalInfo}
-            experience={info.experience}
-            achievements={info.achievements}
-            skills={info.skills}
+                {...info}
             />
           ))}
           </div>
@@ -100,5 +93,3 @@ export const SearchPage = () => {
     </>
   )
 }
-
-
