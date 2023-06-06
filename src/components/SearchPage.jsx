@@ -45,7 +45,8 @@ export const SearchPage = () => {
             placeholder="Who's that Alumnus?"
             onChange={(e) => setSearch(e.target.value)}
             value={search}
-            style={{ flex: 1, height: '30px', border: 'none',  width: '300px' }}
+            className='SP-searchBar'
+            style={{ flex: 1, height: '48px', border: 'none',  width: '300px' }}
           />
           <button className='SP-button' type="submit">
             Search

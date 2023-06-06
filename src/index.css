@@ -7,21 +7,28 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-  viewport-fit: auto;
+  
+  
 }
 
 body {
   background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%,
    rgba(212,9,9,0.6460959383753502) 0%, rgba(0,127,255,0.738532913165266) 100%);
-
 }
 
 .footer {
   padding: 25px;
-  text-align: center;
   color: white;
   background-color: #2a2e30;
+  
+}
+
+.site--container {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 120px); /* Adjust the value to account for your header and footer heights */
+  
 }
 
 /* End of Body & Root CSS */
@@ -126,9 +133,8 @@ form {
 .inner-id-card {
   margin: 15px;
   min-width: 250px;
-
-
 }
+
 
 .modal-content {
   background-color: #1a1a1a;
@@ -172,37 +178,3 @@ textarea {
 p{
   color:white;
 }
-
-<<<<<<< HEAD
-=======
-
-.home-button {
-  margin-right:auto;
-  margin-left:auto;
-  color: red;
-  text-decoration: none;
-  
-}
-.sideMenu:hover {
-
-  color:#f9f9f9
-
-}
-
-.search-results {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 25px;
-  overflow-y: scroll;
-  max-height: 500px;
-
-}
-
-.id-card {
-  max-width: 250px;
-  background-color: #242424;
-  font-size: larger;
-  max-width: 100%;
-
-}
->>>>>>> d48afb920eb6f9e7d2764613eb01350f1c195070
