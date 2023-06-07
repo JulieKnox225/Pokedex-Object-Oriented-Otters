@@ -86,8 +86,8 @@ form {
   color: white;
 }
 
-.text-muted {
-  color: white;
+.login-text {
+  color:rgb(255, 255, 255);
   font-size: medium;
 }
 
@@ -177,6 +177,22 @@ p{
   color:white;
 }
 
-.add-entry-page {
-  margin-top: 55px;
+/* Forgot Password CSS  */
+.h1-fpp{
+  color: white;
+  margin-bottom: 100px;
+}
+.p-fpp{
+  font-size: medium;
+  margin-bottom: 100px;
+}
+.fp-email{
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.p-text{
+  color: white;
 }
