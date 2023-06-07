@@ -16,6 +16,7 @@ export const AddEntryPage = () => {
     )
 
     function handleChange(e){
+        e.preventDefault
         const {name, value} = e.target
         setFormData(prevFormData => {
           return {
@@ -49,9 +50,9 @@ export const AddEntryPage = () => {
         <form onSubmit={handleSubmit}>
           <div style={{ display: 'flex', marginBottom: '10px' }}>
             <div style={{ marginRight: '10px' }}>
-              <label htmlFor="firstName">First Name:</label>
-              <input
-                id='firstName'
+              <label>First Name:</label>
+              <input   
+                name="firstName"
                 type="text"
                 placeholder="John"
                 onChange={handleChange}
@@ -60,12 +61,12 @@ export const AddEntryPage = () => {
               />
             </div>
             <div>
-              <label htmlFor="lastName">Last Name:</label>
+              <label>Last Name:</label>
               <input
                 type="text"
                 placeholder="Doe"
                 onChange={handleChange}
-                id="lastName"
+                name="lastName"
                 value={formData.lastName}
                 required
               />
@@ -73,22 +74,22 @@ export const AddEntryPage = () => {
           </div>
           <div style={{ display: 'flex', marginBottom: '10px' }}>
             <div style={{ marginRight: '10px' }}>
-              <label htmlFor="phoneNumber">Phone Number:</label>
+              <label>Phone Number:</label>
               <input
                 type="text"
                 placeholder="(555)-555-5555"
                 onChange={handleChange}
-                id="phoneNumber"
+                name="phoneNumber"
                 value={formData.phoneNumber}
               />
             </div>
             <div>
-              <label htmlFor="email">Email:</label>
+              <label>Email:</label>
               <input
                 type="email"
                 placeholder="JohnDoe@email.com"
                 onChange={handleChange}
-                id="email"
+                name="email"
                 value={formData.email}
               />
             </div>
@@ -98,7 +99,7 @@ export const AddEntryPage = () => {
               <label htmlFor="degree">Degree:</label>
               <input
                 type='text'
-                id="degree"
+                name="degree"
                 value={formData.degree}
                 onChange={handleChange}
               />
@@ -108,7 +109,6 @@ export const AddEntryPage = () => {
             <div style={{ marginRight: '10px' }}>
               <label htmlFor="additionalInfo">Additional Info:</label>
               <textarea
-                id="additionalInfo"
                 name="additionalInfo"
                 value={formData.additionalInfo}
                 onChange={handleChange}
@@ -117,7 +117,6 @@ export const AddEntryPage = () => {
             <div>
               <label htmlFor="experience">Experience:</label>
               <textarea
-                id="experience"
                 name="experience"
                 value={formData.experience}
                 onChange={handleChange}
@@ -128,7 +127,6 @@ export const AddEntryPage = () => {
             <div style={{ marginRight: '10px' }}>
               <label htmlFor="achievements">Achievements:</label>
               <textarea
-                id="achievements"
                 name="achievements"
                 value={formData.achievements}
                 onChange={handleChange}
@@ -137,7 +135,6 @@ export const AddEntryPage = () => {
             <div style={{ marginRight: '10px' }}>
               <label htmlFor="skills">Skills:</label>
               <textarea
-                id="skills"
                 name="skills"
                 value={formData.skills}
                 onChange={handleChange}

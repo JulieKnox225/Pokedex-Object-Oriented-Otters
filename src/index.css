@@ -7,8 +7,7 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-  
-  
+
 }
 
 body {
@@ -27,7 +26,7 @@ body {
 .site--container {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 120px); /* Adjust the value to account for your header and footer heights */
+  min-height: calc(100vh - 77px); /* Adjust the value to account for your header and footer heights */
   
 }
 
@@ -174,7 +173,10 @@ textarea {
   align-items: center;
 }
 
-
 p{
   color:white;
+}
+
+.add-entry-page {
+  margin-top: 55px;
 }

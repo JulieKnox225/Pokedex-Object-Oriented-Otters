@@ -6,7 +6,7 @@ import Modal from 'react-bootstrap/Modal';
 
 
 export const IDCards = (props) => {
-
+  console.log(props)
   //Modal state
   const [smShow, setSmShow] = useState(false);
 

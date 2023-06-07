@@ -15,13 +15,13 @@ function App() {
   return (
     <>
     <div className='site--container'>
-    <Navbar />
-    <Routes>
-      <Route path='/' element ={ <Login />} />
-      <Route path='/AddEntryPage' element ={ <AddEntryPage />} />
-      <Route path='/SearchPage' element= { <SearchPage /> } />
-      <Route path ='/ForgotPassword' element = {<ForgotPassword/>}/>
-    </Routes>
+      <Navbar />
+      <Routes>
+        <Route path='/' element ={ <Login />} />
+        <Route path='/AddEntryPage' element ={ <AddEntryPage />} />
+        <Route path='/SearchPage' element= { <SearchPage /> } />
+        <Route path ='/ForgotPassword' element = {<ForgotPassword/>}/>
+      </Routes>
     </div>
     <Footer />
     </>
