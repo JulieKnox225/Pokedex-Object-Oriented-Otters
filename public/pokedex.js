@@ -72,3 +72,5 @@ const createTableQuery = `
     spDef INTEGER,
     speed INTEGER
   )`;
+
+module.exports = db;
