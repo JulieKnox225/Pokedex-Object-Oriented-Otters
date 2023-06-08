@@ -12,8 +12,8 @@ const connection = mysql.createConnection({
   host: "127.0.0.1",
   port: 3306,
   user: "root",
-  password: "bvtpassword", // Update with your MySQL password
-  database: "alumniDatabase", // Update with your schema name
+  password: "bvtpassword", 
+  database: "alumniDatabase", 
 });
 
 // connect to the database
@@ -26,7 +26,8 @@ connection.connect((error) => {
   }
 });
 
-// function to create the alumni table
+// it is around here when the columns do not separate into their own separate categories. 
+
 function createAlumniTable() {
   const query = `CREATE TABLE IF NOT EXISTS alumni (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -122,3 +123,5 @@ function saveAlumniData() {
   // close the database connection when done
   connection.end();
 }
+
+

@@ -1,47 +1,94 @@
+/* Start of Body, Root, Footer CSS */
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
+
 }
 
-a {
-  font-weight: 500;
-  color: #fdfdff;
-  text-decoration: inherit;
+body {
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%,
+   rgba(212,9,9,0.6460959383753502) 0%, rgba(0,127,255,0.738532913165266) 100%);
 }
-a:hover {
-  color: #535bf2;
-}
-/* Login Page CSS AV*/
 
-.nav-home{
-  margin:0;
-  padding: 0;
-  text-align:left;
-  color: #ffffff;
-  width: 200px;
-  background-color: #457b9d;
-  border-radius: 10px;
-}
-img{
-  width: 200px;
-  height: 100px;
+.footer {
+  padding: 25px;
+  color: white;
+  background-color: #2a2e30;
   
 }
 
-
-body {
+.site--container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Roboto, Helvetica, Arial, sans-serif;
+  flex-direction: column;
+  min-height: calc(100vh - 77px); /* Adjust the value to account for your header and footer heights */
+  
+}
+
+/* End of Body & Root CSS */
+
+/* Start of Nav Bar */
+
+.home-button {
+  margin-right:auto;
+  margin-left:auto;
+  color: red;
+
+}
+
+.sideMenu:hover {
+
+  color:#f9f9f9
+
+}
+
+/* End of Nav Bar */
+
+/* Login Page CSS AV*/
+
+form {
+  margin-bottom: 10px;
+}
+
+.nav-home{
+  padding: 15px;
+  display: flex;
   text-align: center;
-  width: 50%;
-  margin: 250px auto;
+  padding: 15px;
+  margin-bottom: 15px;
+  text-align:left;
+  color:red;
+  background-color: #2a2e30;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.pokemon--logo{
+  width: 200px;
+  height: 100px;
+  margin: 15px;
+}
+
+.form-basic-email,
+.form-basic-password {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-label {
+  color: white;
+}
+
+.login-text {
+  color:rgb(255, 255, 255);
+  font-size: medium;
 }
 
 .btn-el{
@@ -52,68 +99,100 @@ body {
   width: 300px;
   padding: 10px;
 }
-/* End of Login CSS AV*/
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+
+.login--container {
+  padding-bottom: 50px;
 }
 
+.login-buttons {
+  margin-bottom: 10px;
+}
+
+/* End of Login CSS AV*/
+
+/*  Start Search Page CSS */
+
+.avatar-for-search {
+  height: 9em;
+}
+
+.search-results {
+  display: flex;
+  justify-content: space-around;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.outer-id-card {
+  background-color: #242424;
+  font-size: larger;
+  margin: 15px; 
+}
+
+.inner-id-card {
+  margin: 15px;
+  min-width: 250px;
+}
+
+
+.modal-content {
+  background-color: #1a1a1a;
+
+}
+
+.modal-title {
+  color:white;
+}
+
+/*   End Search Page CSS */
+
+/* General Buttons, inputs and textareas 
+(Might have to change later according to each Page) */
+
 button {
-  border-radius: 8px;
+  border-radius: 4px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
-  border-color: #646cff;
+  border-color: #8a0202;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
-input {
-  display: flex;
-  align-items: center;
-}
-
+input,
 textarea {
   display: flex;
   align-items: center;
 }
 
-nav {
-  padding: 15px;
-  background-color: black;
-  font-size: larger;
-  display: flex;
-  text-align: center;
-  color:red
-  
+p{
+  color:white;
 }
 
-.home-button {
-  margin-right:auto;
-  margin-left:auto;
-  color: red;
-  text-decoration: none;
-  
+/* Forgot Password CSS  */
+.h1-fpp{
+  color: white;
+  margin-bottom: 100px;
+}
+.p-fpp{
+  font-size: medium;
+  margin-bottom: 100px;
+}
+.fp-email{
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.p-text{
+  color: white;
 }
