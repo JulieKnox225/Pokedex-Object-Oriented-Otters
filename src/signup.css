@@ -1,0 +1,87 @@
+body{
+    background-image: url(https://wallpaperaccess.com/full/6682744.gif);
+    background-size: cover;
+}
+
+.form{
+    background-color:rgb(0, 0, 0);
+    border-radius: 20px;
+    width: 550px;
+    margin: 20px auto;
+    padding: 20px;
+    border: inset;
+    border-color: #bd4646;
+}
+
+.form-body{
+    text-align: left;
+    padding: 20px 10px;
+}
+
+.form-body > *{
+    padding: 5px;
+}
+
+.form__label{
+    width: 40%;
+   color: aqua;
+   font-size: large;
+   font-family: Rancho,Georgia, 'Times New Roman', Times, serif;
+
+}
+
+
+.form_input{
+    width: 60%;
+    
+}
+
+.footer{
+    text-align: center;
+}
+
+.btn{
+
+    color:rgb(0, 0, 0);
+    border-radius: 10px;
+    background-color: aqua;
+    font-family: Rancho,Georgia, 'Times New Roman', Times, serif;
+}
+
+#lastsentence{
+    margin: 15px;
+    color: #bd4646;
+    font-family: Rancho,Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+input[type=text] {
+    background-color: #1a1c1b;
+    color: rgb(255, 255, 255);
+    caret-color: #f50000;
+    
+    
+  }
+
+  input[type = password] {
+    background-color: #1a1d1c;
+    color: rgb(255, 255, 255);
+    caret-color: #f50000;
+  }
+
+  input[type = email]{
+    background-color: #151616;
+    color: rgb(255, 255, 255);
+    
+  }
+
+ #signup{
+    color:#bd4646;
+    font-size: larger;
+    font-family: Rancho,Georgia, 'Times New Roman', Times, serif;
+    font-size:48px;
+    
+    
+ }
+
+ 
