@@ -180,11 +180,11 @@ p{
 /* Forgot Password CSS  */
 .h1-fpp{
   color: white;
-  margin-bottom: 100px;
+  margin: 50px;
 }
 .p-fpp{
   font-size: medium;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 .fp-email{
   margin-bottom: 20px;
@@ -197,6 +197,12 @@ p{
   color: white;
 }
 
+.forgot-pw-submit {
+  background-color: #1a1a1a;
+  margin-bottom: 50px;
+}
+
+/* PokeDex Search Page */
 .container-search-poke {
   background-color: white;
   margin-right: 55px;
@@ -213,6 +219,7 @@ p{
   margin: 10px;
   width: fit-content;
   background-color:#2a2e30;
+  color: white;
   
 }
 
@@ -246,3 +253,4 @@ p{
 .btn-dark {
   background-color: #2a2e30;
 }
+

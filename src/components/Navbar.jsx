@@ -13,7 +13,8 @@ export const Navbar = () => {
           <Dropdown.Item href="/SearchPage">Search Page</Dropdown.Item>
           <Dropdown.Item href="/AddEntryPage">Add Entry</Dropdown.Item>
           <Dropdown.Item href="/SPPoke">PokeDex</Dropdown.Item>
-          
+          <Dropdown.Item href="/Profile">Profile</Dropdown.Item>
+          <Dropdown.Item href="/EditProfile">Edit Profile</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
         <a href="/" className="home-button">
