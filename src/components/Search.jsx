@@ -3,7 +3,7 @@ import { IDCards } from './IDCards';
 import FakeData from '../FakeData'
 
 
-export const SearchPage = () => {
+export const Search = () => {
   
   const [search, setSearch] = useState('')
   const [searchResults, setSearchResults] = useState([])

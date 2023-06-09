@@ -20,7 +20,7 @@ export const Navbar = () => {
         <a href="/" className="home-button">
         <h2>PokeDex</h2>
         </a>
-        <h3><Link to="/"> Login</Link></h3>
+        <h3><Link to="/Login"> Login</Link></h3>
         </nav>
     </div>
   )
