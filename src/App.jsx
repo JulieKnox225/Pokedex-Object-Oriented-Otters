@@ -7,6 +7,8 @@ import { Navbar } from './components/Navbar'
 import { SearchPage } from './components/SearchPage'
 import { Footer } from './components/Footer'
 import { ForgotPassword } from './components/ForgotPassword'
+import { SearchPagePokemon } from './components/SearchPagePokemon'
+
 // import { useState } from 'react'
 
 
@@ -21,6 +23,7 @@ function App() {
         <Route path='/AddEntryPage' element ={ <AddEntryPage />} />
         <Route path='/SearchPage' element= { <SearchPage /> } />
         <Route path ='/ForgotPassword' element = {<ForgotPassword/>}/>
+        <Route path='/SPPoke' element= {< SearchPagePokemon/> } />
       </Routes>
     </div>
     <Footer />

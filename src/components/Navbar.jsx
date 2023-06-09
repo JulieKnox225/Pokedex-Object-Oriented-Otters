@@ -12,6 +12,7 @@ export const Navbar = () => {
           <Dropdown.Item href="/">Home</Dropdown.Item>
           <Dropdown.Item href="/SearchPage">Search Page</Dropdown.Item>
           <Dropdown.Item href="/AddEntryPage">Add Entry</Dropdown.Item>
+          <Dropdown.Item href="/SPPoke">PokeDex</Dropdown.Item>
           
         </Dropdown.Menu>
       </Dropdown>

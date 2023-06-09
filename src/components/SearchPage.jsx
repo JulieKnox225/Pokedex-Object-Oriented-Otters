@@ -6,7 +6,7 @@ import FakeData from '../FakeData'
 export const SearchPage = () => {
   
   const [search, setSearch] = useState('')
-  const [searchResults, setSearchResults] = useState('')
+  const [searchResults, setSearchResults] = useState([])
 
   const handleSubmit = (e) => {
     e.preventDefault();

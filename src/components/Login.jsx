@@ -11,7 +11,7 @@ export const Login = () => {
 
   return (
     
-    <Form className='login--container'>
+    <Form className='login--container' style={{marginTop: '45px'}}>
       <div>
       <div className='logo'>
         <a href='/'><img className='pokemon--logo' src="images/logo3.png" alt="Pokemon in it's Iconic Design" /></a>
