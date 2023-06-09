@@ -197,6 +197,7 @@ p{
   color: white;
 }
 
+/* PokeDex Search Page */
 .container-search-poke {
   background-color: white;
   margin-right: 55px;
@@ -213,6 +214,7 @@ p{
   margin: 10px;
   width: fit-content;
   background-color:#2a2e30;
+  color: white;
   
 }
 

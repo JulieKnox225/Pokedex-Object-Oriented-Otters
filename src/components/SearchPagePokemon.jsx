@@ -25,7 +25,6 @@ export const SearchPagePokemon = () => {
         if(search.trim() === '') {
             return;
         }
-
         setSearchResults('')
     }
 
@@ -44,6 +43,7 @@ export const SearchPagePokemon = () => {
                 />
             </Col>
             <Row className='select-row'>
+                {/* Could be checkboxes instead for multiple selections */}
             <Form.Select  aria-label="Default">
                 <option>Type</option>
                 <option>Normal</option>
