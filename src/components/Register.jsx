@@ -3,8 +3,8 @@
 export const Register = () => {
 
     return(
-        
-      <div className="form">
+      <div className='register-body'>
+      <form className="register-form">
         <h4 id="signup">Sign Up</h4>
           <div className="form-body">
               <div className="username">
@@ -32,13 +32,13 @@ export const Register = () => {
               <div className="confirm-password">
                   <label className="form__label" htmlFor="confirmPassword">Confirm Password </label>
                   <input className="form__input" type="password" id="confirmPassword" placeholder="Confirm Password"/>
-                    <p id="lastsentence">Password must be at least 12 characters long. Weak password will be marked as invalid. Password must not be greater than 128 characters long.</p>
+                    <p className="last-sentence">Password must be at least 12 characters long. Weak password will be marked as invalid. Password must not be greater than 128 characters long.</p>
               </div>
           </div>
-          <div className="footer">
+          <div className="submit-register">
               <button type="submit" className="btn">Create New Account</button>
           </div>
-      </div>   
-    
+      </form>   
+    </div>  
     )       
 }
