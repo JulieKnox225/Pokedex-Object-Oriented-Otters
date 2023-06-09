@@ -48,7 +48,7 @@ body{
     font-family: Rancho,Georgia, 'Times New Roman', Times, serif;
 }
 
-#lastsentence{
+.lastsentence{
     margin: 15px;
     color: #bd4646;
     font-family: Rancho,Georgia, 'Times New Roman', Times, serif;
@@ -75,7 +75,7 @@ input[type=text] {
     
   }
 
- #signup{
+ .signup{
     color:#bd4646;
     font-size: larger;
     font-family: Rancho,Georgia, 'Times New Roman', Times, serif;

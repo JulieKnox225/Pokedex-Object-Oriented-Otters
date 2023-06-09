@@ -37,7 +37,7 @@ export const Login = () => {
         Forgot Password
       </Button>
      </Link>
-      <Link to = "/AddEntryPage">
+      <Link to = "/Register">
       <Button className = "btn-el"variant="secondary" type="submit">
        New User
       </Button>
