@@ -2,6 +2,7 @@
     background-image: url(https://wallpaperaccess.com/full/6682744.gif);
     background-size: cover;
     height: calc(100vh - 152px);
+    overflow-y: scroll;
 }
 
 .register-form{
@@ -9,9 +10,11 @@
     border-radius: 20px;
     width: 550px;
     margin: 20px auto;
+    margin-top: 55px;
     padding: 20px;
     border: inset;
     border-color: #bd4646;
+    
 }
 
 .form-body{
@@ -32,17 +35,19 @@
 }
 
 
-.form_input{
+.form__input{
     width: 60%;
-    
+    background-color: #1a1c1b;
+    color: rgb(255, 255, 255);
+    caret-color: #f50000;
+    margin-top: 5px;
 }
 
 .submit-register{
     text-align: center;
 }
 
-.btn{
-
+.create-acc-btn{
     color:rgb(0, 0, 0);
     border-radius: 10px;
     background-color: aqua;
@@ -50,36 +55,17 @@
 }
 
 .last-sentence{
-    margin: 15px;
+    margin: 10px;
     color: #bd4646;
     font-family: Rancho,Georgia, 'Times New Roman', Times, serif;
     font-size: 20px;
 }
 
-input[type=text] {
-    background-color: #1a1c1b;
-    color: rgb(255, 255, 255);
-    caret-color: #f50000;
-    
-    
-  }
 
-  input[type = password] {
-    background-color: #1a1d1c;
-    color: rgb(255, 255, 255);
-    caret-color: #f50000;
-  }
-
-  input[type = email]{
-    background-color: #151616;
-    color: rgb(255, 255, 255);
-    
-  }
-
- .signup{
+ .sign-up{
     color:#bd4646;
     font-size: larger;
-    font-family: Rancho,Georgia, 'Times New Roman', Times, serif;
+    font-family: Rancho, Georgia, 'Times New Roman', Times, serif;
     font-size:48px;
     
     

@@ -5,7 +5,7 @@ export const Register = () => {
     return(
       <div className='register-body'>
       <form className="register-form">
-        <h4 id="signup">Sign Up</h4>
+        <h4 className="sign-up">Sign Up</h4>
           <div className="form-body">
               <div className="username">
                   <label className="form__label" htmlFor="firstName">First Name </label>
@@ -13,7 +13,7 @@ export const Register = () => {
               </div>
               <div className="lastname">
                   <label className="form__label" htmlFor="lastName">Last Name </label>
-                  <input  type="text" name="" id="lastName"  className="form__input"placeholder="Last Name"/>
+                  <input className="form__input" type="text" name="" id="lastName" placeholder="Last Name"/>
               </div>
               
               <div className="username">
@@ -23,7 +23,7 @@ export const Register = () => {
 
               <div className="email">
                   <label className="form__label" htmlFor="email">Email </label>
-                  <input  type="email" id="email" className="form__input" placeholder="Email"/>
+                  <input className="form__input" type="email" id="email"  placeholder="Email"/>
               </div>
               <div className="password">
                   <label className="form__label" htmlFor="password">Password </label>
@@ -36,7 +36,7 @@ export const Register = () => {
               </div>
           </div>
           <div className="submit-register">
-              <button type="submit" className="btn">Create New Account</button>
+              <button type="submit" className="create-acc-btn">Create New Account</button>
           </div>
       </form>   
     </div>  
