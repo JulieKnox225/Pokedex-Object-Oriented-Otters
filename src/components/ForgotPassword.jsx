@@ -1,5 +1,6 @@
 import Form from 'react-bootstrap/Form';
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { Button } from 'react-bootstrap';
 
 
 export function ForgotPassword(){
@@ -11,6 +12,8 @@ export function ForgotPassword(){
     </br>
         and we&apos;ll send a link to reset your password.
     </p>
+    <Form onSubmit={(e) => {e.preventDefault()
+      console.log('sent email')}}>
     <Form.Group  className="fp-email" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control type="email" placeholder="Enter email" />
@@ -18,7 +21,8 @@ export function ForgotPassword(){
           Well never share your email with anyone else.
         </Form.Text>
       </Form.Group>
-   
+      <Button type='submit' className='forgot-pw-submit'>Submit</Button>
+    </Form>
     </div>
 
     </>
