@@ -8,6 +8,8 @@ import { SearchPage } from './components/SearchPage'
 import { Footer } from './components/Footer'
 import { ForgotPassword } from './components/ForgotPassword'
 import { SearchPagePokemon } from './components/SearchPagePokemon'
+import { Profile } from './components/Profile'
+import { ProfileEdit } from './components/ProfileEdit'
 
 // import { useState } from 'react'
 
@@ -24,6 +26,8 @@ function App() {
         <Route path='/SearchPage' element= { <SearchPage /> } />
         <Route path ='/ForgotPassword' element = {<ForgotPassword/>}/>
         <Route path='/SPPoke' element= {< SearchPagePokemon/> } />
+        <Route path='/Profile' element= {< Profile/> } />
+        <Route path='/ProfileEdit' element= {< ProfileEdit/> } />
       </Routes>
     </div>
     <Footer />
