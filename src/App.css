@@ -1,13 +1,3 @@
 #root {
   text-align: center;
 }
-
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #ff00008f);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-

@@ -29,7 +29,7 @@ export const SearchPagePokemon = () => {
     }
 
     return (
-    <>
+    <div className="Poke-search-page">
         <div className="container-search-poke">
         <Form onSubmit={handleSubmit}>
             <Col className="search-column">
@@ -83,6 +83,6 @@ export const SearchPagePokemon = () => {
             <h2 className="">Results</h2>
             
         </div>
-   </>
+   </div>
   )
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { IDCards } from './IDCards';
 import FakeData from '../FakeData'
+import { IDCards } from './BVT.ID';
 
 
 export const SearchPage = () => {

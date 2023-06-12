@@ -11,22 +11,22 @@
 }
 
 body {
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%,
-   rgba(212,9,9,0.6460959383753502) 0%, rgba(0,127,255,0.738532913165266) 100%);
+
+  background: linear-gradient(0deg, #084c61 1%,
+   #CC0000 2%, #084c61 70%);
 }
 
 .footer {
   padding: 25px;
   color: white;
-  background-color: #2a2e30;
+  background-color: #CC0000;
   
 }
 
 .site--container {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 77px); /* Adjust the value to account for your header and footer heights */
+  min-height: calc(100vh - 77px); /* Adjust the value to account for header and footer heights */
   
 }
 
@@ -37,13 +37,23 @@ body {
 .home-button {
   margin-right:auto;
   margin-left:auto;
-  color: red;
-
+  color: #B3A125;
+  font-size: small;
+  text-shadow: black -4px  3px;
+}
+h2 {
+  font-size: 35px;
 }
 
 .sideMenu:hover {
-
   color:#f9f9f9
+}
+
+.nav-home{
+  padding: 15px;
+  display: flex;
+  color:red;
+  background-color: #084c61;
 
 }
 
@@ -55,20 +65,8 @@ form {
   margin-bottom: 10px;
 }
 
-.nav-home{
-  padding: 15px;
-  display: flex;
-  text-align: center;
-  padding: 15px;
-  text-align:left;
-  color:red;
-  background-color: #2a2e30;
-
-}
-
 .pokemon--logo{
   width: 200px;
-  height: 100px;
   margin: 15px;
 }
 
@@ -202,8 +200,12 @@ p{
 }
 
 /* PokeDex Search Page */
+
+.Poke-search-page {
+  overflow-y: auto;
+}
 .container-search-poke {
-  background-color: white;
+  background-color:#2a2e30;
   margin-right: 55px;
   margin-left: 55px;
   margin-top: 25px;
@@ -253,3 +255,6 @@ p{
   background-color: #2a2e30;
 }
 
+.id-text {
+  color: white;
+}

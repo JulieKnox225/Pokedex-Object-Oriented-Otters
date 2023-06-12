@@ -5,10 +5,9 @@ export default [
         lastName: "Doe",
         email: "johndoe@example.com",
         degree: "Bachelor of Science",
-        additionalInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         experience: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget nisl nulla. Proin semper, tellus in rutrum convallis, metus urna pellentesque turpis, id feugiat dolor turpis non sem. Phasellus maximus diam vel dui interdum, eu luctus urna dapibus.",
         achievements: [
-          "Lorem ipsum dolor sit amet",
+          "caught all the pokemans",
           "Consectetur adipiscing elit",
           "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
         ],

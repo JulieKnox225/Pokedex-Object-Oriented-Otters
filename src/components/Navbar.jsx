@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom"
 import Dropdown from 'react-bootstrap/Dropdown'
 
+
 export const Navbar = () => {
   return (
     <div>
       <nav className='nav-home'>
+
       <Dropdown>
         <Dropdown.Toggle variant='secondary' id="dropdown-button-dark-example1">
         </Dropdown.Toggle>
