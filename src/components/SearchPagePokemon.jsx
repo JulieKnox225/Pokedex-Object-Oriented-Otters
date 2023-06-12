@@ -39,7 +39,7 @@ export const SearchPagePokemon = () => {
                 placeholder="Who's that Pokemon?"
                 onChange={(e) => setSearch(e.target.value)}
                 value={search}
-                style={{backgroundColor: '#2a2e30'}}
+                style={{backgroundColor: '#2a2e30', color: 'white'}}
                 />
             </Col>
             <Row className='select-row'>
@@ -73,7 +73,7 @@ export const SearchPagePokemon = () => {
             </Form.Select>
             </Row>
             <Col className="search-column">
-                <Button variant="dark" type="submit">
+                <Button className="poke-search-btn" variant="" type="submit">
                     Search
                 </Button>
             </Col>

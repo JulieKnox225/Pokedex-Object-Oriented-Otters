@@ -3,6 +3,8 @@ import FakeData from '../FakeData'
 import { IDCards } from './BVT.ID';
 
 
+
+
 export const SearchPage = () => {
   
   const [search, setSearch] = useState('')
@@ -31,29 +33,23 @@ export const SearchPage = () => {
 
   return (
     <>
-    <div style={{ display: 'flex', justifyContent: 'center' }}>
+    <div className='surrounding-box'>
+      <div className='container-search'>
       <form onSubmit={handleSubmit}>
-        <div 
-          style={{ 
-            display: 'flex', 
-            margin: '15px', 
-            alignItems: 'center', 
-            maxWidth: '500px', 
-          }}>
+          <div className='sp-search'>
           <input
             type="text"
             placeholder="Who's that Alumnus?"
             onChange={(e) => setSearch(e.target.value)}
             value={search}
             className='SP-searchBar'
-            style={{ flex: 1, height: '48px', border: 'none',  width: '300px' }}
           />
           <button className='SP-button' type="submit">
             Search
           </button>
-          
-        </div>
+          </div>
       </form>
+      </div>
     </div>
         <hr style={{
             color: "white",
@@ -61,6 +57,7 @@ export const SearchPage = () => {
             height: 0.1,
         }}
           />
+    <div className='BVT-results'>
       {searchResults.length > 0 && (
         <div style={{ marginTop: '20px' }}>
           <p>These are the results for {search}:</p>
@@ -74,6 +71,8 @@ export const SearchPage = () => {
           </div>
         </div>
       )}
+      
+    </div>
     </>
   )
 }

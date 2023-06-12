@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+
 import Dropdown from 'react-bootstrap/Dropdown'
 
 
@@ -22,9 +22,11 @@ export const Navbar = () => {
         </Dropdown.Menu>
       </Dropdown>
         <a href="/" className="home-button">
-        <h2>PokeDex</h2>
+        <h2 className="home-button-text">PokeDex</h2>
         </a>
-        <h3><Link to="/Login"> Login</Link></h3>
+        <a href='/Login'>
+        <p className="login--text">Login</p>
+        </a>
         </nav>
     </div>
   )

@@ -1,17 +1,10 @@
 /* Start of Body, Root, Footer CSS */
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
 }
 
 body {
-
   background: linear-gradient(0deg, #084c61 1%,
    #CC0000 2%, #084c61 70%);
 }
@@ -41,8 +34,26 @@ body {
   font-size: small;
   text-shadow: black -4px  3px;
 }
-h2 {
+.home-button-text {
+  font-family: serif;
   font-size: 35px;
+}
+
+.home-button-text:hover {
+  color:#CC0000;
+}
+
+.login--text {
+  font-weight: 500;
+  font-family: serif;
+  color: #B3A125;
+  font-size: 25px;
+  text-shadow: black -4px  3px;
+}
+
+.login--text:hover {
+  color:#CC0000;
+  text-shadow: black 0 1px 5px;
 }
 
 .sideMenu:hover {
@@ -52,10 +63,11 @@ h2 {
 .nav-home{
   padding: 15px;
   display: flex;
-  color:red;
+  align-items: center;
+  align-content: center;
   background-color: #084c61;
-
 }
+
 
 /* End of Nav Bar */
 
@@ -197,23 +209,66 @@ p{
 .forgot-pw-submit {
   background-color: #1a1a1a;
   margin-bottom: 50px;
+
 }
 
-/* PokeDex Search Page */
+/* BVT Search Page */
+
+.surrounding-box {
+  background-color:#2a2e30;
+  margin: 25px 55px 0 55px;
+  box-shadow: #1a1a1a 5px 5px 10px;
+}
+
+.container-search {
+  height: 125px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #2a2e30;
+  margin-top: 65px;
+}
+
+.sp-search {
+  display: flex;
+  align-items: center;
+
+}
+
+.SP-searchBar {
+  height: 45px;
+  border: none;
+  width: 300px;
+}
+
+
+.BVT-results,
+.container-results-poke {
+  background-color:#2a2e30;
+  margin: 25px 55px 25px 55px;
+  min-height: calc(100vh - 450px);
+  box-shadow: #1a1a1a 5px 5px 10px;
+  max-height: max-content;
+}
+
+/* Poke Search Page */
 
 .Poke-search-page {
   overflow-y: auto;
 }
+
 .container-search-poke {
   background-color:#2a2e30;
-  margin-right: 55px;
-  margin-left: 55px;
-  margin-top: 25px;
+  margin: 25px 55px 0 55px;
   height: 167px;
   display: flex;
   flex-direction:column;
   align-items: center;
-
+  box-shadow: #1a1a1a 5px 5px 10px;
+}
+.poke-search-btn {
+  background-color: black;
+  color: white;
 }
 
 .form-select {
@@ -228,13 +283,7 @@ p{
   margin-bottom: 5px;
 }
 
-.container-results-poke {
-  background-color: white;
-  margin-right: 55px;
-  margin-left: 55px;
-  margin-top: 25px;
-  height: calc(100vh - 450px);
-}
+
 
 
 .search-column {
