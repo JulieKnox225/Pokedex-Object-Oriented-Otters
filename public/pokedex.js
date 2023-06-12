@@ -1,4 +1,4 @@
-import mysql from "mysql2/promise";
+const mysql = require("mysql2/promise");
 
 class Pokemon {
   constructor(pokedexId, name, types, total, hp, attack, defense, spAtk, spDef, speed) {
@@ -14,190 +14,295 @@ class Pokemon {
     this.speed = speed;
   }
 
+
   toString() {
     return `ID: ${this.pokedexId}\nName: ${this.name}\nType: ${this.types}\nTotal: ${this.total}\nHP: ${this.hp}\nAttack: ${this.attack}\nDefense: ${this.defense}\nSp. Atk: ${this.spAtk}\nSp. Def: ${this.spDef}\nSpeed: ${this.speed}`;
   }
 }
 
 function generateRandomName(usedNames, isPokemon) {
-  const pokemonNames = ["Chikorita", "Cyndaquil", "Totodile", "Larvitar", "Mareep", "Sudowoodo", "Wooper", "Heracross", "Phanpy", "Teddiursa"];
-  const yugiohNames = ["Dark Magician", "Blue-Eyes White Dragon", "Red-Eyes Black Dragon", "Exodia the Forbidden One", "Summoned Skull", "Black Luster Soldier", "Gaia the Fierce Knight", "Jinzo", "Slifer the Sky Dragon", "Obelisk the Tormentor"];
-  const availableNames = isPokemon ? pokemonNames.filter(name => !usedNames.includes(name)) : yugiohNames.filter(name => !usedNames.includes(name));
+  const pokemonNames = [
+    "Bulbasaur",
+    "Charmander",
+    "Squirtle",
+    "Pikachu",
+    "Jigglypuff",
+    "Snorlax",
+    "Mewtwo",
+    "Gyarados",
+    "Dragonite",
+    "Mew",
+    "Articuno",
+    "Zapdos",
+    "Moltres",
+    "Venusaur",
+    "Charizard",
+    "Blastoise",
+    "Gengar",
+    "Alakazam",
+    "Lapras",
+    "Arcanine",
+    "Golem",
+    "Kangaskhan",
+    "Tauros",
+    "Gyarados",
+    "Machamp",
+    "Rhydon",
+    "Kabutops",
+    "Aerodactyl",
+    "Lapras",
+    "Vaporeon",
+    "Jolteon",
+    "Flareon",
+    "Espeon",
+    "Umbreon",
+    "Leafeon",
+    "Glaceon",
+    "Sylveon",
+    "Charjabug",
+    "Vikavolt",
+    "Crabrawler",
+    "Crabominable",
+    "Oricorio",
+    "Cutiefly",
+    "Ribombee",
+    "Rockruff",
+    "Lycanroc",
+    "Wishiwashi",
+    "Mareanie",
+    "Toxapex",
+    "Mudbray",
+    "Mudsdale",
+    "Dewpider",
+    "Araquanid",
+    "Fomantis",
+    "Lurantis",
+    "Morelull",
+    "Shiinotic",
+    "Salandit",
+    "Salazzle",
+    "Stufful",
+    "Bewear",
+    "Bounsweet",
+    "Steenee",
+    "Tsareena",
+    "Comfey",
+    "Oranguru",
+    "Passimian",
+    "Wimpod",
+    "Golisopod",
+    "Sandygast",
+    "Palossand",
+    "Pyukumuku",
+    "Type: Null",
+    "Silvally",
+    "Minior",
+    "Komala",
+    "Turtonator",
+    "Togedemaru",
+    "Mimikyu",
+    "Bruxish",
+    "Drampa",
+    "Dhelmise",
+    "Jangmo-o",
+    "Hakamo-o",
+    "Kommo-o",
+    "Tapu Koko",
+    "Tapu Lele",
+    "Tapu Bulu",
+    "Tapu Fini",
+    "Cosmog",
+    "Cosmoem",
+    "Solgaleo",
+    "Lunala",
+    "Nihilego",
+    "Buzzwole",
+    "Pheromosa",
+    "Xurkitree",
+    "Celesteela",
+    "Kartana",
+    "Guzzlord",
+    "Necrozma",
+    "Magearna",
+    "Marshadow",
+    "Poipole",
+    "Naganadel",
+    "Stakataka",
+    "Blacephalon",
+    "Zeraora",
+    "Meltan",
+    "Melmetal",
+    "Zacian",
+    "Zamazenta",
+    "Eternatus",
+    "Kubfu",
+    "Urshifu",
+    "Zarude",
+    "Regieleki",
+    "Regidrago",
+    "Glastrier",
+    "Spectrier",
+    "Calyrex",
+  ];
 
-  if (availableNames.length === 0) {
-    return `Name ${usedNames.length + 1}`;
-  }
+  const yugiohNames = [
+    "Dark Magician",
+    "Blue-Eyes White Dragon",
+    "Red-Eyes Black Dragon",
+    "Exodia the Forbidden One",
+    "Black Luster Soldier",
+    "Summoned Skull",
+    "Gaia The Fierce Knight",
+    "Red Dragon Archfiend",
+    "Black Rose Dragon",
+    "Stardust Dragon",
+    "Cyber Dragon",
+    "Elemental HERO Neos",
+    "Jinzo",
+    "Harpie Lady",
+    "Dark Paladin",
+    "Obelisk the Tormentor",
+    "Slifer the Sky Dragon",
+    "The Winged Dragon of Ra",
+    "Red-Eyes Darkness Dragon",
+    "Blackwing - Gale the Whirlwind",
+    "Horus the Black Flame Dragon LV8",
+    "Neo-Spacian Grand Mole",
+    "Ancient Fairy Dragon",
+    "Majestic Star Dragon",
+    "Junk Warrior",
+    "Goyo Guardian",
+    "Mecha Phantom Beast Dracossack",
+    "Number 39: Utopia",
+    "Number 17: Leviathan Dragon",
+    "Number 11: Big Eye",
+    "Wind-Up Zenmaines",
+    "Gagaga Cowboy",
+    "Constellar Pleiades",
+    "Number 101: Silent Honor ARK",
+    "Evilswarm Exciton Knight",
+    "Number 74: Master of Blades",
+    "Number 106: Giant Hand",
+    "Number C39: Utopia Ray",
+    "Dark Rebellion Xyz Dragon",
+    "Number 39: Utopia Beyond",
+    "Clear Wing Synchro Dragon",
+    "Stardust Spark Dragon",
+    "Star Eater",
+    "Ghostrick Alucard",
+    "Downerd Magician",
+    "Number 103: Ragnazero",
+    "Number 50: Blackship of Corn",
+    "Number 82: Heartlandraco",
+    "M-X-Saber Invoker",
+    "Evilswarm Ophion",
+    "Evilswarm Bahamut",
+    "Evilswarm Thanatos",
+    "Ophion the Silent",
+    "Dark Armed Dragon",
+    "Number 92: Heart-eartH Dragon",
+    "Number C92: Heart-eartH Chaos Dragon",
+    "Number 107: Galaxy-Eyes Tachyon Dragon",
+    "Number C107: Neo Galaxy-Eyes Tachyon Dragon",
+    "Starliege Paladynamo",
+    "Constellar Ptolemy M7",
+    "Number 61: Volcasaurus",
+    "Number C69: Heraldry Crest of Horror",
+    "Number 19: Freezadon",
+    "Number 46: Dragluon",
+    "Number 6: Chronomaly Atlandis",
+    "Number C6: Chronomaly Chaos Atlandis",
+    "Number 15: Gimmick Puppet Giant Grinder",
+    "Number 40: Gimmick Puppet of Strings",
+    "Number 88: Gimmick Puppet of Leo",
+    "Number C88: Gimmick Puppet Disaster Leo",
+    "Number 9: Dyson Sphere",
+    "Number C9: Chaos Dyson Sphere",
+  ];
+  
 
-  const randomIndex = Math.floor(Math.random() * availableNames.length);
-  const name = availableNames[randomIndex];
-  availableNames.splice(randomIndex, 1);
-
-  return name;
+  const allNames = isPokemon ? [...pokemonNames] : [...yugiohNames];
+  const remainingNames = allNames.filter(name => !usedNames.includes(name));
+  const randomIndex = Math.floor(Math.random() * remainingNames.length);
+  return remainingNames[randomIndex];
 }
 
-function generateRandomPokemon(pokedexId, usedNames) {
-  const isPokemon = true;
-  const name = generateRandomName(usedNames, isPokemon);
-  const types = generateRandomTypes();
-  const total = 800;
-
-  const getRandomStat = () => Math.floor(Math.random() * 256);
-  const hp = getRandomStat();
-  const attack = getRandomStat();
-  const defense = getRandomStat();
-  const spAtk = getRandomStat();
-  const spDef = getRandomStat();
-  const speed = getRandomStat();
-
-  return new Pokemon(pokedexId, name, types, total, hp, attack, defense, spAtk, spDef, speed);
-}
-
-function generateRandomYugiohCard(cardId, usedNames) {
-  const isPokemon = false;
-  const name = generateRandomName(usedNames, isPokemon);
-  const types = generateRandomYugiohTypes();
-  const total = 3000;
-
-  const getRandomStat = () => Math.floor(Math.random() * 500);
-  const attack = getRandomStat();
-  const defense = getRandomStat();
-
-  return new YugiohCard(cardId, name, types, total, attack, defense);
-}
-
-function generateRandomTypes() {
-  const types = ["Grass", "Fire", "Water", "Electric", "Rock", "Psychic", "Ghost", "Ice", "Dragon", "Flying"];
-  const numTypes = Math.floor(Math.random() * 2) + 1;
-  const shuffledTypes = types.sort(() => Math.random() - 0.5);
-  return shuffledTypes.slice(0, numTypes);
-}
-
-function generateRandomYugiohTypes() {
-  const types = ["Warrior", "Spellcaster", "Dragon", "Zombie", "Fiend", "Machine", "Aqua", "Pyro", "Rock", "Wind"];
-  const numTypes = Math.floor(Math.random() * 2) + 1;
-  const shuffledTypes = types.sort(() => Math.random() - 0.5);
-  return shuffledTypes.slice(0, numTypes);
-}
-
-class YugiohCard {
-  constructor(cardId, name, types, total, attack, defense) {
-    this.cardId = cardId;
-    this.name = name;
-    this.types = types;
-    this.total = total;
-    this.attack = attack;
-    this.defense = defense;
-  }
-
-  toString() {
-    return `Card ID: ${this.cardId}\nName: ${this.name}\nType: ${this.types}\nTotal: ${this.total}\nAttack: ${this.attack}\nDefense: ${this.defense}`;
-  }
-}
-
-const usedNames = [];
-const pokemonList = [];
-const yugiohCardList = [];
-
-for (let i = 1; i <= 100; i++) {
-  const isPokemon = Math.random() < 0.5;
-  if (isPokemon) {
-    const pokemon = generateRandomPokemon(i.toString().padStart(3, '0'), usedNames);
-    usedNames.push(pokemon.name);
-    pokemonList.push(pokemon);
-    console.log(pokemon.toString());
-  } else {
-    const yugiohCard = generateRandomYugiohCard(i.toString().padStart(3, '0'), usedNames);
-    usedNames.push(yugiohCard.name);
-    yugiohCardList.push(yugiohCard);
-    console.log(yugiohCard.toString());
-  }
-}
-
-async function connectToDatabase() {
-  try {
-    const connection = await mysql.createConnection({
-      host: "127.0.0.1",
-      port: 3306,
-      user: "root",
-      password: "bvtpassword",
-      database: "pokedexDB",
-    });
-
-    console.log("Connected to the database.");
-    await createAlumniTable(connection);
-    await insertAlumniData(connection);
-
-    connection.end();
-  } catch (error) {
-    console.error("Error connecting to the database:", error);
-  }
-}
-
-
-async function createAlumniTable(connection) {
-  const createTableQuery = `
-    CREATE TABLE IF NOT EXISTS alumni (
-      id INT AUTO_INCREMENT PRIMARY KEY,
+async function createPokemonTable(connection) {
+  await connection.execute(`
+    CREATE TABLE IF NOT EXISTS PokeDigiMonDex (
+      pokedex_id INT PRIMARY KEY,
       name VARCHAR(255),
-      type VARCHAR(255),
+      types VARCHAR(255),
       total INT,
+      hp INT,
       attack INT,
-      defense INT
+      defense INT,
+      sp_atk INT,
+      sp_def INT,
+      speed INT
     )
-  `;
-  try {
-    await connection.execute(createTableQuery);
-    console.log("Alumni table created successfully.");
-  } catch (error) {
-    console.error("Error creating alumni table: ", error);
-  }
+  `);
 }
 
-async function insertAlumniData(connection) {
-  const alumniData = [];
-
-  pokemonList.forEach(pokemon => {
-    const { name, types, total, attack, defense } = pokemon;
-    alumniData.push([name, types.join(","), total, attack, defense]);
+async function insertRandomDataIntoDatabase() {
+  const connection = await mysql.createConnection({
+    host: "127.0.0.1",
+    user: "root",
+    password: "bvtpassword",
+    database: "pokedexDB",
   });
+  await createPokemonTable(connection); 
 
-  yugiohCardList.forEach(card => {
-    const { name, types, total, attack, defense } = card;
-    alumniData.push([name, types.join(","), total, attack, defense]);
-  });
+  const usedNames = [];
 
-  if (alumniData.length > 0) {
-    try {
-      const placeholders = alumniData.map(() => "(?, ?, ?, ?, ?)").join(", ");
-      const values = alumniData.flat();
-      const insertQuery = `INSERT INTO alumni (name, type, total, attack, defense) VALUES ${placeholders}`;
+  for (let i = 0; i < 100; i++) {
+    const pokedexId = i + 1;
+    const name = generateRandomName(usedNames, true);
+    const types = ["Grass", "Fire", "Water", "Electric", "Normal"];
+    const total = Math.floor(Math.random() * 200) + 300;
+    const hp = Math.floor(Math.random() * 100) + 50;
+    const attack = Math.floor(Math.random() * 100) + 50;
+    const defense = Math.floor(Math.random() * 100) + 50;
+    const spAtk = Math.floor(Math.random() * 100) + 50;
+    const spDef = Math.floor(Math.random() * 100) + 50;
+    const speed = Math.floor(Math.random() * 100) + 50;
 
-      await connection.execute(insertQuery, values);
-      console.log("Data inserted into alumni table successfully.");
-    } catch (error) {
-      console.error("Error inserting data into alumni table: ", error);
-    }
+    const pokemon = new Pokemon(
+      pokedexId,
+      name,
+      types,
+      total,
+      hp,
+      attack,
+      defense,
+      spAtk,
+      spDef,
+      speed
+    );
+
+    console.log(pokemon.toString());
+
+    await connection.execute(
+      "INSERT INTO PokeDigiMonDex (pokedex_id, name, types, total, hp, attack, defense, sp_atk, sp_def, speed) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+      [
+        pokemon.pokedexId,
+        pokemon.name,
+        pokemon.types.join(", "),
+        pokemon.total,
+        pokemon.hp,
+        pokemon.attack,
+        pokemon.defense,
+        pokemon.spAtk,
+        pokemon.spDef,
+        pokemon.speed,
+      ]
+    );
+
+    usedNames.push(pokemon.name);
   }
+
+  await connection.end();
+  console.log("Data insertion completed.");
 }
 
-connectToDatabase();
-
-<<<<<<< HEAD
-// Create table for each generation
-const createTableQuery = `
-  CREATE TABLE IF NOT EXISTS generation1 (
-    pokedexId INTEGER PRIMARY KEY,
-    name TEXT,
-    types TEXT,
-    total INTEGER,
-    hp INTEGER,
-    attack INTEGER,
-    defense INTEGER,
-    spAtk INTEGER,
-    spDef INTEGER,
-    speed INTEGER
-  )`;
-
-module.exports = db;
-=======
->>>>>>> 3ceff9a27c258a429b738d8ecf37290824a7997c
+insertRandomDataIntoDatabase();
