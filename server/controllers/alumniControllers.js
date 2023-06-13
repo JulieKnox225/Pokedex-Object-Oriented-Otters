@@ -89,7 +89,8 @@ const updateAlumni = async (req, res) => {
                     WHERE id = :id`,
                 {
                     property: bodyValuesArray[i][0],
-                    value: bodyValuesArray[i][1]
+                    value: bodyValuesArray[i][1],
+                    id
                 }
             )
         }
