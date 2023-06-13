@@ -50,14 +50,9 @@ export const SearchPage = () => {
           </div>
       </form>
       </div>
-    </div>
-        <hr style={{
-            color: "white",
-            backgroundColor: "white",
-            height: 0.1,
-        }}
-          />
+    </div>     
     <div className='BVT-results'>
+      <h2 className="sp-results-header">Results</h2>
       {searchResults.length > 0 && (
         <div style={{ marginTop: '20px' }}>
           <p>These are the results for {search}:</p>
@@ -71,7 +66,7 @@ export const SearchPage = () => {
           </div>
         </div>
       )}
-      
+
     </div>
     </>
   )

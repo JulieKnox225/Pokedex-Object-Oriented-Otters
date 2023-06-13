@@ -31,7 +31,7 @@ export const SearchPagePokemon = () => {
     return (
     <div className="Poke-search-page">
         <div className="container-search-poke">
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit} style={{margin: '10px'}}> 
             <Col className="search-column">
                 <Form.Control
                 className='pokeSearch' 
@@ -80,7 +80,7 @@ export const SearchPagePokemon = () => {
         </Form>
         </div>
         <div className="container-results-poke">
-            <h2 className="">Results</h2>
+            <h2 className="sp-results-header">Results</h2>
             
         </div>
    </div>

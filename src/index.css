@@ -19,7 +19,7 @@ body {
 .site--container {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 77px); /* Adjust the value to account for header and footer heights */
+  min-height: calc(100vh - 77px);
   
 }
 
@@ -27,6 +27,9 @@ body {
 
 /* Start of Nav Bar */
 
+.drop {
+  background-color: #2a2e30;
+}
 .home-button {
   margin-right:auto;
   margin-left:auto;
@@ -41,6 +44,7 @@ body {
 
 .home-button-text:hover {
   color:#CC0000;
+  text-shadow: black 4px 3px 3px;
 }
 
 .login--text {
@@ -48,12 +52,12 @@ body {
   font-family: serif;
   color: #B3A125;
   font-size: 25px;
-  text-shadow: black -4px  3px;
+  text-shadow: black -4px  3px 2px;
 }
 
 .login--text:hover {
   color:#CC0000;
-  text-shadow: black 0 1px 5px;
+  text-shadow: black 4px 3px 3px;
 }
 
 .sideMenu:hover {
@@ -66,6 +70,7 @@ body {
   align-items: center;
   align-content: center;
   background-color: #084c61;
+  max-height: 86px;
 }
 
 
@@ -118,42 +123,6 @@ form {
 }
 
 /* End of Login CSS AV*/
-
-/*  Start Search Page CSS */
-
-.avatar-for-search {
-  height: 9em;
-}
-
-.search-results {
-  display: flex;
-  justify-content: space-around;
-  align-content: flex-start;
-  flex-wrap: wrap;
-}
-
-.outer-id-card {
-  background-color: #242424;
-  font-size: larger;
-  margin: 15px; 
-}
-
-.inner-id-card {
-  margin: 15px;
-  min-width: 250px;
-}
-
-
-.modal-content {
-  background-color: #1a1a1a;
-
-}
-
-.modal-title {
-  color:white;
-}
-
-/*   End Search Page CSS */
 
 /* General Buttons, inputs and textareas 
 (Might have to change later according to each Page) */
@@ -214,31 +183,71 @@ p{
 
 /* BVT Search Page */
 
+.avatar-for-search {
+  height: 9em;
+}
+
+.search-results {
+  display: flex;
+  justify-content: space-around;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.outer-id-card {
+  background-color: #242424;
+  font-size: larger;
+  margin: 15px; 
+}
+
+.inner-id-card {
+  margin: 15px;
+  min-width: 250px;
+}
+
+.modal-content {
+  background-color: #1a1a1a;
+
+}
+
+.modal-title {
+  color:white;
+}
+
 .surrounding-box {
   background-color:#2a2e30;
   margin: 25px 55px 0 55px;
-  box-shadow: #1a1a1a 5px 5px 10px;
+  box-shadow: #1a1a1a -7px 7px 15px;
+  border-radius: 10px;
 }
 
 .container-search {
-  height: 125px;
+  height: 75px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #2a2e30;
-  margin-top: 65px;
+  margin-top: 25px;
+  border-radius: 10px
+  
 }
 
 .sp-search {
   display: flex;
   align-items: center;
-
+  
 }
 
 .SP-searchBar {
   height: 45px;
   border: none;
   width: 300px;
+  
+}
+/* combined search bar and btn */
+.sp-search {
+  min-width: 150px;
+  max-width: 300px;
 }
 
 
@@ -247,8 +256,14 @@ p{
   background-color:#2a2e30;
   margin: 25px 55px 25px 55px;
   min-height: calc(100vh - 450px);
-  box-shadow: #1a1a1a 5px 5px 10px;
+  box-shadow: #1a1a1a -7px 7px 15px;
   max-height: max-content;
+  border-radius: 10px;
+}
+
+.sp-results-header {
+  color: white;
+  margin: 25px;
 }
 
 /* Poke Search Page */
@@ -260,12 +275,14 @@ p{
 .container-search-poke {
   background-color:#2a2e30;
   margin: 25px 55px 0 55px;
-  height: 167px;
+  height: 175px;
   display: flex;
   flex-direction:column;
   align-items: center;
-  box-shadow: #1a1a1a 5px 5px 10px;
+  box-shadow: #1a1a1a -7px 7px 15px;
+  border-radius: 10px;
 }
+
 .poke-search-btn {
   background-color: black;
   color: white;

@@ -46,7 +46,7 @@ export const AddEntryPage = () => {
     return (
     <>
       <h4 style={{ textAlign: 'center', color: "white", marginTop: '55px' }}>Add Entry Page</h4>
-      <div style={{ display: 'flex', justifyContent: 'center', color: 'white' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', color: 'white', marginBottom: '55px' }}>
         <form onSubmit={handleSubmit}>
           <div style={{ display: 'flex', marginBottom: '10px' }}>
             <div style={{ marginRight: '10px' }}>

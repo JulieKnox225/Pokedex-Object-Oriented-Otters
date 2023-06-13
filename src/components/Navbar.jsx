@@ -8,7 +8,7 @@ export const Navbar = () => {
       <nav className='nav-home'>
 
       <Dropdown>
-        <Dropdown.Toggle variant='secondary' id="dropdown-button-dark-example1">
+        <Dropdown.Toggle className='drop' variant='secondary' id="dropdown-button-dark-example1">
         </Dropdown.Toggle>
         <Dropdown.Menu variant="dark">
           <Dropdown.Item href="/">Home</Dropdown.Item>
