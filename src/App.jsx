@@ -10,14 +10,27 @@ import { ForgotPassword } from './components/ForgotPassword'
 import { SearchPagePokemon } from './components/SearchPagePokemon'
 import { Home } from './components/Home'
 import { Register } from './components/Register'
-
-
+// import { useState, useEffect } from 'react'
+// import './darkMode.css';
 function App() {
+  // const [theme, setTheme] = useState('light')
+  // const toggleTheme = () => {
+  //   if (theme === 'light') {
+  //     setTheme ('dark');
+  //   } else{
+  //     setTheme('light');
+  //   }
+  // }
+  // useEffect(()=> {
+  //   document.body.className = theme;
+  // }, [theme]);
 
   return (
     <>
     <div className='site--container'>
       <Navbar />
+      {/* <div className={`App ${theme}`}>
+      <button className = "light-dark-btn"onClick={toggleTheme}>Toggle Theme</button> */}
       <Routes>
         <Route path='/' element ={ <Home />} />
         <Route path='/Login' element={ <Login/> } />
@@ -30,6 +43,7 @@ function App() {
       </Routes>
     </div>
     <Footer />
+    {/* </div> */}
     </>
   )
 }

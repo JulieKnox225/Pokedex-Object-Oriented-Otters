@@ -3,14 +3,11 @@ import Form from 'react-bootstrap/Form';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import {  Link } from 'react-router-dom';
-
-
 //Add a greeting to the user after login?
 
 export const Login = () => {
 
   return (
-    
     <Form className='login--container' style={{marginTop: '45px'}}>
       <div>
       <div className='logo'>
@@ -44,6 +41,7 @@ export const Login = () => {
       </Link>
       </div>
     </Form>
+  
   );
 }
 

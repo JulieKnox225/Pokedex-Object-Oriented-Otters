@@ -1,12 +1,23 @@
-
+import { useState, useEffect } from 'react'
+import './darkMode.css';
 import Dropdown from 'react-bootstrap/Dropdown'
 
 
 export const Navbar = () => {
+   const [theme, setTheme] = useState('light')
+  const toggleTheme = () => {
+    if (theme === 'light') {
+      setTheme ('dark');
+    } else{
+      setTheme('light');
+    }
+  }
+  useEffect(()=> {
+    document.body.className = theme;
+  }, [theme]);
   return (
     <div>
       <nav className='nav-home'>
-
       <Dropdown>
         <Dropdown.Toggle className='drop' variant='secondary' id="dropdown-button-dark-example1">
         </Dropdown.Toggle>
@@ -21,12 +32,15 @@ export const Navbar = () => {
 
         </Dropdown.Menu>
       </Dropdown>
+      <button className = "light-dark-btn"onClick={toggleTheme}>Toggle Theme</button>
         <a href="/" className="home-button">
         <h2 className="home-button-text">PokeDex</h2>
         </a>
         <a href='/Login'>
         <p className="login--text">Login</p>
         </a>
+      <a className={`App ${theme}`}>
+    </a>
         </nav>
     </div>
   )

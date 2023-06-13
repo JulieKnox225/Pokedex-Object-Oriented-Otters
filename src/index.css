@@ -76,7 +76,7 @@ body {
 
 /* End of Nav Bar */
 
-/* Login Page CSS AV*/
+/* Login Page*/
 
 form {
   margin-bottom: 10px;
@@ -122,7 +122,7 @@ form {
   margin-bottom: 10px;
 }
 
-/* End of Login CSS AV*/
+/* End of Login*/
 
 /* General Buttons, inputs and textareas 
 (Might have to change later according to each Page) */
@@ -155,7 +155,7 @@ p{
   color:white;
 }
 
-/* Forgot Password CSS  */
+/* Forgot Password*/
 .h1-fpp{
   color: white;
   margin: 50px;
@@ -324,3 +324,4 @@ p{
 .id-text {
   color: white;
 }
+

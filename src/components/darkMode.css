@@ -1,0 +1,15 @@
+.dark{
+  background: linear-gradient(0deg, #084c61 1%,
+  #CC0000 2%, #084c61 70%);
+    color: #fff;
+  }
+  .light{
+    background: linear-gradient(200deg, #084c61 1%,
+    #CC0000 2%, #084c61 70%);
+  }
+ .light-dark-btn{
+    display: flex;
+    flex-wrap: nowrap;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 183, 255);
+  }
