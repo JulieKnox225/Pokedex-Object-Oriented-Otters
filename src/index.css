@@ -31,8 +31,11 @@ body {
   background-color: #2a2e30;
 }
 .home-button {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
   margin-right:auto;
-  margin-left:auto;
+  margin-left: auto;
   color: #B3A125;
   font-size: small;
   text-shadow: black -4px  3px;
@@ -67,13 +70,37 @@ body {
 .nav-home{
   padding: 15px;
   display: flex;
-  align-items: center;
+  align-items:center;
   align-content: center;
   background-color: #084c61;
   max-height: 86px;
 }
-
-
+/* Toggle Theme Nav */
+.dark{
+  background: linear-gradient(0deg, #084c61 1%,
+  #CC0000 2%, #084c61 70%);
+    color: #fff;
+  }
+  .light{
+    background: linear-gradient(200deg, #084c61 1%,
+    #CC0000 2%, #084c61 70%);
+  }
+ .light-dark-btn{
+    font-size: 15px;
+    font-weight: 500;
+    font-family: serif;
+    text-shadow: black -4px  3px;
+    margin-left: 5px;
+    margin-right: 0px;
+    border-radius: 5px;
+    padding: 8px;
+    color: #B3A125;
+    background-color: #2a2e30;
+  }
+  .light-dark-btn:hover{
+    color:#CC0000;
+    text-shadow: black 4px 3px 3px;
+  }
 /* End of Nav Bar */
 
 /* Login Page*/
