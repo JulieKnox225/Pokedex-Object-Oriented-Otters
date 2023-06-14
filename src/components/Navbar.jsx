@@ -33,9 +33,9 @@ export const Navbar = () => {
         <a className={`App ${theme}`}>
         <button className = "light-dark-btn"onClick={toggleTheme}>Toggle Theme</button>
         </a>
-        <div href= "/" className="home-button">
+        <a href= "/" className="home-button">
         <h2 className="home-button-text">PokeDex</h2>
-        </div>
+        </a>
         <a href='/Login'>
         <p className="login--text">Login</p>
         </a>

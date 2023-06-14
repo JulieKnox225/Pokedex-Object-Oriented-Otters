@@ -41,6 +41,8 @@ body {
   text-shadow: black -4px  3px;
 }
 .home-button-text {
+  text-align: center;
+  margin-right: 75%;
   font-family: serif;
   font-size: 35px;
 }
