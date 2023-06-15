@@ -1,76 +1,37 @@
-// git remote add origin https://github.com/JulieKnox225/Pokedex-Object-Oriented-Otters.git
-// git branch -M main
-// git push -u origin main
-
-//           Please note that this code may be changed if you wish. Not everything here is final, it may not even work as intended either, in which I can fix
-
-// import to database
+// Import necessary libraries
 const mysql = require("mysql");
 
-// create a connection to the database
+// Create a connection to the database
 const connection = mysql.createConnection({
   host: "127.0.0.1",
   port: 3306,
   user: "root",
-  password: "bvtpassword", 
-  database: "alumniDatabase", 
+  password: "bvtpassword",
+  database: "alumniDatabase",
 });
 
-// connect to the database
+// Connect to the database
 connection.connect((error) => {
   if (error) {
     console.error("Error connecting to the database: ", error);
   } else {
     console.log("Connected to the database.");
-    createAlumniTable();
   }
 });
 
-// it is around here when the columns do not separate into their own separate categories. 
-
-function createAlumniTable() {
-  const query = `CREATE TABLE IF NOT EXISTS alumni (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    fullName VARCHAR(255) NOT NULL,
-    contactInfo VARCHAR(255) NOT NULL,
-    degree VARCHAR(255) NOT NULL,
-    achievements TEXT,
-    projects TEXT,
-    skills TEXT,
-    recommendations TEXT
-  )`;
-
-  connection.query(query, (error, result) => {
-    if (error) {
-      console.error("Error creating alumni table: ", error);
-    } else {
-      console.log("Alumni table created successfully.");
-      saveAlumniData();
-    }
-  });
-}
-
 // Alumni class with their traits
 class Alumni {
-  constructor(
-    fullName,
-    contactInfo,
-    degree,
-    achievements,
-    projects,
-    skills,
-    recommendations
-  ) {
+  constructor(fullName, contactInfo, degree, achievements, projects, skills, recommendations) {
     this.fullName = fullName;
     this.contactInfo = contactInfo;
     this.degree = degree;
-    this.achievements = achievements || []; // Ensure default empty arrays if not provided
+    this.achievements = achievements || [];
     this.projects = projects || [];
     this.skills = skills || [];
     this.recommendations = recommendations || [];
   }
 
-  // saving the traits to their respective identities
+  // Save the traits to their respective identities
   saveToDatabase() {
     const query =
       "INSERT INTO alumni (fullName, contactInfo, degree, achievements, projects, skills, recommendations) VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -94,8 +55,7 @@ class Alumni {
   }
 }
 
-// These are examples, fake information that serves as a test to push into the database
-
+// Create instances of the Alumni class with information
 const alumni1 = new Alumni(
   "John Broe",
   "john.broe@aol.com",
@@ -115,13 +75,74 @@ const alumni2 = new Alumni(
   ["Strong recommendations from the industry for excellent development skills"]
 );
 
-// save alumni data to the database
-function saveAlumniData() {
-  alumni1.saveToDatabase();
-  alumni2.saveToDatabase();
+const alumni3 = new Alumni(
+  "Jackson Morrow",
+  "jacksonmorrow@bvt.com",
+  "Bachelor's Degree",
+  ["Employee of the Month", "Youngest Senior Dev in Apple"],
+  ["Fill this in please "],
+  ["Skill 1", "Skill 2"],
+  ["Recommendation 1", "Recommendation 2"]
+);
 
-  // close the database connection when done
-  connection.end();
-}
+const alumni4 = new Alumni(
+  "Alumni 4 Full Name",
+  "alumni4@example.com",
+  "Master's Degree",
+  ["Achievement 1", "Achievement 2"],
+  ["Project 1", "Project 2"],
+  ["Skill 1", "Skill 2"],
+  ["Recommendation 1", "Recommendation 2"]
+);
 
+const alumni5 = new Alumni(
+  "Alumni 5 Full Name",
+  "alumni5@example.com",
+  "Bachelor's Degree",
+  ["Achievement 1", "Achievement 2"],
+  ["Project 1", "Project 2"],
+  ["Skill 1", "Skill 2"],
+  ["Recommendation 1", "Recommendation 2"]
+);
 
+const alumni6 = new Alumni(
+  "Alumni 6 Full Name",
+  "alumni6@example.com",
+  "Master's Degree",
+  ["Achievement 1", "Achievement 2"],
+  ["Project 1", "Project 2"],
+  ["Skill 1", "Skill 2"],
+  ["Recommendation 1", "Recommendation 2"]
+);
+
+const alumni7 = new Alumni(
+  "Alumni 7 Full Name",
+  "alumni7@example.com",
+  "Bachelor's Degree",
+  ["Achievement 1", "Achievement 2"],
+  ["Project 1", "Project 2"],
+  ["Skill 1", "Skill 2"],
+  ["Recommendation 1", "Recommendation 2"]
+);
+
+const alumni8 = new Alumni(
+  "Alumni 8 Full Name",
+  "alumni8@example.com",
+  "Master's Degree",
+  ["Achievement 1", "Achievement 2"],
+  ["Project 1", "Project 2"],
+  ["Skill 1", "Skill 2"],
+  ["Recommendation 1", "Recommendation 2"]
+);
+
+alumni1.saveToDatabase();
+alumni2.saveToDatabase();
+alumni3.saveToDatabase();
+alumni4.saveToDatabase();
+alumni5.saveToDatabase();
+alumni6.saveToDatabase();
+alumni7.saveToDatabase();
+alumni8.saveToDatabase();
+
+// Close the database connection when done
+connection.end();
