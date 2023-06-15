@@ -86,53 +86,53 @@ const alumni3 = new Alumni(
 );
 
 const alumni4 = new Alumni(
-  "Alumni 4 Full Name",
-  "alumni4@example.com",
+  "Kevin Kittensburgh",
+  "kevinK@example.com",
   "Master's Degree",
-  ["Achievement 1", "Achievement 2"],
-  ["Project 1", "Project 2"],
-  ["Skill 1", "Skill 2"],
-  ["Recommendation 1", "Recommendation 2"]
+  ["Fosters puppies", "Employee of the minute"],
+  ["Assisted in developing a website for a large tech company", "Developed virtual chess game"],
+  ["Python", "C++"],
+  ["David", "Mom"]
 );
 
 const alumni5 = new Alumni(
-  "Alumni 5 Full Name",
-  "alumni5@example.com",
+  "Micheal Green",
+  "forestLover@example.com",
   "Bachelor's Degree",
-  ["Achievement 1", "Achievement 2"],
-  ["Project 1", "Project 2"],
-  ["Skill 1", "Skill 2"],
-  ["Recommendation 1", "Recommendation 2"]
+  ["Won most likely to be a tree hugger in hs", "Is a tree hugger"],
+  ["Developed a new slowest sorting algorithm", "Developed new fastest sorting algorithm"],
+  ["JavaScript", "HTML"],
+  ["Hank Green", "John Green"]
 );
 
 const alumni6 = new Alumni(
-  "Alumni 6 Full Name",
-  "alumni6@example.com",
+  "Sunny Charlston",
+  "notalwayssunny23@example.com",
   "Master's Degree",
-  ["Achievement 1", "Achievement 2"],
-  ["Project 1", "Project 2"],
-  ["Skill 1", "Skill 2"],
-  ["Recommendation 1", "Recommendation 2"]
+  ["Tutors children in need", "Valedictorian of hs"],
+  ["Developed a weather tracker app"],
+  ["Rust", "CSS"],
+  ["Charity organization leader"]
 );
 
 const alumni7 = new Alumni(
-  "Alumni 7 Full Name",
-  "alumni7@example.com",
+  "David Dobrik",
+  "loser@example.com",
   "Bachelor's Degree",
-  ["Achievement 1", "Achievement 2"],
-  ["Project 1", "Project 2"],
-  ["Skill 1", "Skill 2"],
-  ["Recommendation 1", "Recommendation 2"]
+  ["Giving away a Tesla", "Gaining 1mil subs"],
+  ["Make youtube video", "Make a cult"],
+  ["none"],
+  ["Youtube", "Tesla"]
 );
 
 const alumni8 = new Alumni(
-  "Alumni 8 Full Name",
-  "alumni8@example.com",
+  "Julia Lavender",
+  "Julia'sGardens@example.com",
   "Master's Degree",
-  ["Achievement 1", "Achievement 2"],
-  ["Project 1", "Project 2"],
-  ["Skill 1", "Skill 2"],
-  ["Recommendation 1", "Recommendation 2"]
+  ["Starting my own virtual garden website", "Employee of the year"],
+  ["Virtual garden", "Website for virtual garden company"],
+  ["Wordpress", "Css"],
+  ["Digital Skills Prof", "Garden store manager"]
 );
 
 alumni1.saveToDatabase();
