@@ -74,7 +74,7 @@ const alumni2 = new Alumni(
   ["Ruby, PhP, Communication"],
   ["Strong recommendations from the industry for excellent development skills"]
 );
-
+// add information these alumnis PLEASEE PRETTY PLEASEEEEEE
 const alumni3 = new Alumni(
   "Jackson Morrow",
   "jacksonmorrow@bvt.com",
