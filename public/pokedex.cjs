@@ -14,12 +14,12 @@ class Pokemon {
     this.speed = speed;
   }
 
-
+// Custom toString() method to represent the Pokemon object as a string
   toString() {
     return `ID: ${this.pokedexId}\nName: ${this.name}\nType: ${this.types}\nTotal: ${this.total}\nHP: ${this.hp}\nAttack: ${this.attack}\nDefense: ${this.defense}\nSp. Atk: ${this.spAtk}\nSp. Def: ${this.spDef}\nSpeed: ${this.speed}`;
   }
 }
-
+// Function to generate a random name from a given array, avoiding duplicate names
 function generateRandomName(usedNames, isPokemon) {
   const pokemonNames = [
     "Bulbasaur",
@@ -226,7 +226,7 @@ function generateRandomName(usedNames, isPokemon) {
   const randomIndex = Math.floor(Math.random() * remainingNames.length);
   return remainingNames[randomIndex];
 }
-
+// function to create the pokemon table in the database if it doesn't exist
 async function createPokemonTable(connection) {
   await connection.execute(`
     CREATE TABLE IF NOT EXISTS PokeDigiMonDex (
@@ -243,7 +243,7 @@ async function createPokemonTable(connection) {
     )
   `);
 }
-
+// function to insert random Pokemon data into the database
 async function insertRandomDataIntoDatabase() {
   const connection = await mysql.createConnection({
     host: "127.0.0.1",
@@ -251,10 +251,12 @@ async function insertRandomDataIntoDatabase() {
     password: "bvtpassword",
     database: "pokedexDB",
   });
+  // Create the pokemon table in the database
   await createPokemonTable(connection); 
 
   const usedNames = [];
 
+  // generate and insert 100 random pokemon records
   for (let i = 0; i < 100; i++) {
     const pokedexId = i + 1;
     const name = generateRandomName(usedNames, true);
@@ -266,7 +268,7 @@ async function insertRandomDataIntoDatabase() {
     const spAtk = Math.floor(Math.random() * 100) + 50;
     const spDef = Math.floor(Math.random() * 100) + 50;
     const speed = Math.floor(Math.random() * 100) + 50;
-
+// create a new pokemon instance
     const pokemon = new Pokemon(
       pokedexId,
       name,
@@ -281,7 +283,7 @@ async function insertRandomDataIntoDatabase() {
     );
 
     console.log(pokemon.toString());
-
+// insert the pokemon record into the database
     await connection.execute(
       "INSERT INTO PokeDigiMonDex (pokedex_id, name, types, total, hp, attack, defense, sp_atk, sp_def, speed) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
       [
@@ -300,7 +302,7 @@ async function insertRandomDataIntoDatabase() {
 
     usedNames.push(pokemon.name);
   }
-
+// close the database connection 
   await connection.end();
   console.log("Data insertion completed.");
 }
