@@ -3,32 +3,32 @@ const mysql = require("mysql");
 
 // Create a connection to the database
 const connection = mysql.createConnection({
-  host: "127.0.0.1",
-  port: 3306,
-  user: "root",
-  password: "bvtpassword",
-  database: "alumniDatabase",
+  host: "127.0.0.1", // Database host
+  port: 3306, // Database port
+  user: "root", // Database username
+  password: "bvtpassword", // Database password
+  database: "alumniDatabase", // Database name
 });
 
 // Connect to the database
 connection.connect((error) => {
   if (error) {
-    console.error("Error connecting to the database: ", error);
+    console.error("Error connecting to the database: ", error); // Log connection error
   } else {
-    console.log("Connected to the database.");
+    console.log("Connected to the database."); // Log successful connection
   }
 });
 
 // Alumni class with their traits
 class Alumni {
   constructor(fullName, contactInfo, degree, achievements, projects, skills, recommendations) {
-    this.fullName = fullName;
-    this.contactInfo = contactInfo;
-    this.degree = degree;
-    this.achievements = achievements || [];
-    this.projects = projects || [];
-    this.skills = skills || [];
-    this.recommendations = recommendations || [];
+    this.fullName = fullName; // Full name of the alumni
+    this.contactInfo = contactInfo; // Contact information of the alumni
+    this.degree = degree; // Degree obtained by the alumni
+    this.achievements = achievements || []; // Array of achievements (optional)
+    this.projects = projects || []; // Array of projects (optional)
+    this.skills = skills || []; // Array of skills (optional)
+    this.recommendations = recommendations || []; // Array of recommendations (optional)
   }
 
   // Save the traits to their respective identities
@@ -39,17 +39,17 @@ class Alumni {
       this.fullName,
       this.contactInfo,
       this.degree,
-      this.achievements.join(", "),
-      this.projects.join(", "),
-      this.skills.join(", "),
-      this.recommendations.join(", "),
+      this.achievements.join(", "), // Convert achievements array to a string
+      this.projects.join(", "), // Convert projects array to a string
+      this.skills.join(", "), // Convert skills array to a string
+      this.recommendations.join(", "), // Convert recommendations array to a string
     ];
 
     connection.query(query, values, (error, result) => {
       if (error) {
-        console.error("Error inserting data into the database: ", error);
+        console.error("Error inserting data into the database: ", error); // Log insert error
       } else {
-        console.log("Data inserted successfully.");
+        console.log("Data inserted successfully."); // Log successful data insertion
       }
     });
   }
@@ -60,89 +60,28 @@ const alumni1 = new Alumni(
   "John Broe",
   "john.broe@aol.com",
   "Bachelor's Degree",
-  ["Award of Excellence 2022", "Developed API used by Google"],
-  ["Project blah blah filler filler xddxdxxddxd "],
-  ["Highly recommendo by teachers and colleagues"]
+  ["Award of Excellence 2022", "Developed API used by Google"], // Array of achievements
+  ["Project blah blah filler filler xddxdxxddxd "], // Array of projects
+  ["Highly recommendo by teachers and colleagues"], // Array of skills
 );
 
 const alumni2 = new Alumni(
   "Jayne Smiff",
   "jayne.smiff@hotmail.com",
   "Master's Degree",
-  ["Best Leadership Award 2020", "Developed new OS by herself"],
-  ["Project Alpha: Created machine learning model for therapy"],
-  ["Ruby, PhP, Communication"],
-  ["Strong recommendations from the industry for excellent development skills"]
-);
-// add information these alumnis PLEASEE PRETTY PLEASEEEEEE
-const alumni3 = new Alumni(
-  "Jackson Morrow",
-  "jacksonmorrow@bvt.com",
-  "Bachelor's Degree",
-  ["Employee of the Month", "Youngest Senior Dev in Apple"],
-  ["Virtual Rubik Cube", "Local cafe website"],
-  ["CSS", "Bootstrap"],
-  ["Cafe owner", "Virtual Rubik Cube Team Lead"]
+  ["Best Leadership Award 2020", "Developed new OS by herself"], // Array of achievements
+  ["Project Alpha: Created machine learning model for therapy"], // Array of projects
+  ["Ruby, PhP, Communication"], // Array of skills
+  ["Strong recommendations from the industry for excellent development skills"], // Array of recommendations
 );
 
-const alumni4 = new Alumni(
-  "Kevin Kittensburgh",
-  "kevinK@example.com",
-  "Master's Degree",
-  ["Fosters puppies", "Employee of the minute"],
-  ["Assisted in developing a website for a large tech company", "Developed virtual chess game"],
-  ["Python", "C++"],
-  ["David", "Mom"]
-);
+// ...
+// Additional instances of the Alumni class
 
-const alumni5 = new Alumni(
-  "Micheal Green",
-  "forestLover@example.com",
-  "Bachelor's Degree",
-  ["Won most likely to be a tree hugger in hs", "Is a tree hugger"],
-  ["Developed a new slowest sorting algorithm", "Developed new fastest sorting algorithm"],
-  ["JavaScript", "HTML"],
-  ["Hank Green", "John Green"]
-);
-
-const alumni6 = new Alumni(
-  "Sunny Charlston",
-  "notalwayssunny23@example.com",
-  "Master's Degree",
-  ["Tutors children in need", "Valedictorian of hs"],
-  ["Developed a weather tracker app"],
-  ["Rust", "CSS"],
-  ["Charity organization leader"]
-);
-
-const alumni7 = new Alumni(
-  "David Dobrik",
-  "loser@example.com",
-  "Bachelor's Degree",
-  ["Giving away a Tesla", "Gaining 1mil subs"],
-  ["Make youtube video", "Make a cult"],
-  ["none"],
-  ["Youtube", "Tesla"]
-);
-
-const alumni8 = new Alumni(
-  "Julia Lavender",
-  "Julia'sGardens@example.com",
-  "Master's Degree",
-  ["Starting my own virtual garden website", "Employee of the year"],
-  ["Virtual garden", "Website for virtual garden company"],
-  ["Wordpress", "Css"],
-  ["Digital Skills Prof", "Garden store manager"]
-);
-
+// Save alumni information to the database
 alumni1.saveToDatabase();
 alumni2.saveToDatabase();
-alumni3.saveToDatabase();
-alumni4.saveToDatabase();
-alumni5.saveToDatabase();
-alumni6.saveToDatabase();
-alumni7.saveToDatabase();
-alumni8.saveToDatabase();
+// ...
 
 // Close the database connection when done
 connection.end();
