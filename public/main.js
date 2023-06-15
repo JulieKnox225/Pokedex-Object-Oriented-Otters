@@ -80,9 +80,9 @@ const alumni3 = new Alumni(
   "jacksonmorrow@bvt.com",
   "Bachelor's Degree",
   ["Employee of the Month", "Youngest Senior Dev in Apple"],
-  ["Fill this in please "],
-  ["Skill 1", "Skill 2"],
-  ["Recommendation 1", "Recommendation 2"]
+  ["Virtual Rubik Cube", "Local cafe website"],
+  ["CSS", "Bootstrap"],
+  ["Cafe owner", "Virtual Rubik Cube Team Lead"]
 );
 
 const alumni4 = new Alumni(
